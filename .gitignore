@@ -5,6 +5,7 @@ node_modules/
 
 # Production build
 public/css/
+public/js/aos.js
 
 # Environment variables
 .env
