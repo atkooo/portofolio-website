@@ -1,0 +1,230 @@
+/* Import font Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+/* Import font Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layer Base */
+@layer base {
+  /* Smooth scrolling untuk HTML */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Font dan warna dasar untuk body */
+  body {
+    font-family: "Poppins", sans-serif;
+    @apply bg-primary-white dark:bg-primary-black text-primary-black dark:text-primary-white;
+  }
+
+  /* Font default untuk semua heading */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+/* Layer Komponen */
+@layer components {
+  /* Styling untuk Navbar */
+  .nav {
+    @apply fixed top-0 left-0 z-40 bg-white/90 dark:bg-primary-gray/90
+           py-3 md:py-0 w-full backdrop-blur-sm border-b border-gray-200 
+           dark:border-gray-700/50 transition-colors duration-300;
+  }
+
+  /* Styling untuk menu navbar */
+  .nav-menus {
+    @apply fixed md:static top-0 left-0 z-20 flex flex-col md:flex-row 
+           items-center gap-8 md:gap-12 pt-28 pb-8 md:p-0 w-full 
+           md:w-auto bg-white dark:bg-primary-gray md:bg-transparent 
+           md:dark:bg-transparent transition-all duration-500 ease-in-out 
+           shadow-lg md:shadow-none;
+  }
+
+  /* Styling link navbar */
+  .nav-link {
+    @apply relative font-medium text-gray-700 dark:text-gray-200 
+           hover:text-primary dark:hover:text-primary transition-colors 
+           duration-300 py-1;
+  }
+
+  /* Styling untuk link navbar yang aktif */
+  .nav-link-active {
+    @apply text-primary border-b-2 border-primary dark:text-primary;
+  }
+
+  /* Efek animasi untuk scroll reveal */
+  [data-aos="fade-up"] {
+    @apply opacity-0 translate-y-10;
+  }
+
+  [data-aos="fade-up"].aos-animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Keyframes untuk shimmer loading */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  /* Styling animasi shimmer */
+  .loading-animation {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #f6f7f8 4%, #edeef1 25%, #f6f7f8 36%);
+    background-size: 1000px 100%;
+  }
+
+  /* Link di section contact */
+  .contact-link {
+    @apply p-4 rounded-full hover:brightness-110;
+  }
+  /* Contact Form Styles */
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    @apply outline-none ring-2 ring-primary ring-opacity-50;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    @apply text-gray-400 dark:text-gray-500;
+  }
+  .contact-form label {
+    @apply font-medium mb-1;
+  }
+
+  /* Styling icon sosial media */
+  .social-link {
+    @apply relative flex items-center justify-center w-12 h-12 md:w-14 
+           md:h-14 rounded-full transition-all duration-300 ease-in-out 
+           transform hover:scale-110 shadow-md hover:shadow-lg;
+  }
+
+  /* Tooltip untuk social link */
+  .social-tooltip {
+    @apply absolute -top-10 bg-gray-900 text-white text-sm px-3 py-1 
+           rounded-full opacity-0 invisible transform -translate-y-2 
+           transition-all duration-300 ease-in-out whitespace-nowrap;
+  }
+
+  /* Menampilkan tooltip saat icon di-hover */
+  .social-link:hover .social-tooltip {
+    @apply opacity-100 visible transform translate-y-0;
+  }
+
+  /* Keyframes untuk slide in pada underline contact */
+  @keyframes slideIn {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 3rem; /* w-12 */
+      opacity: 1;
+    }
+  }
+
+  /* Styling untuk section contact */
+  #contact {
+    @apply py-20;
+  }
+
+  /* Animasi underline pada heading di contact */
+  #contact h2 span {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+}
+
+.skill-bar {
+  @apply transition-all duration-300;
+}
+
+.skill-bar:hover .bg-primary {
+  @apply shadow-lg shadow-primary/30;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.typewriter .cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.social-icon {
+  @apply w-10 h-10 rounded-full flex items-center justify-center text-primary border border-primary hover:bg-primary hover:text-white transition-all duration-300;
+}
+
+.filter-btn {
+  @apply px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300;
+}
+
+.filter-btn.active {
+  @apply bg-primary text-white;
+}
+
+.overlay {
+  @apply absolute inset-0 bg-primary/90 flex items-center justify-center gap-4 
+         opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+}
+
+.project-btn {
+  @apply px-4 py-2 bg-white text-primary rounded-full flex items-center gap-2 
+         hover:bg-gray-100 transition-colors duration-300;
+}
+
+.tech-tag {
+  @apply px-3 py-1 bg-primary/10 text-primary rounded-full text-sm;
+}
+
+.project-card {
+  @apply bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg 
+         hover:shadow-xl transition-shadow duration-300;
+}
