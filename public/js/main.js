@@ -20,7 +20,8 @@ const ICONS = {
 
 // Optimized menu toggle
 const toggleMenuHandler = () => {
-  const isHidden = menu.classList.toggle("translate-y-[-200%]");
+  menu.classList.toggle("translate-y-[-200%]"); // Changed from -100% to -200%
+  const isHidden = menu.classList.contains("translate-y-[-200%]");
   toggleMenu.querySelector("img").src = ICONS.menu[isHidden ? "open" : "close"];
 };
 
@@ -39,7 +40,7 @@ const debounce = (fn, delay) => {
   };
 };
 
-// Optimized typewriter effect
+// Typewriter effect implementation
 const typewriter = (() => {
   const texts = ["Web Developer", "UI/UX Designer", "Frontend Developer"];
   let count = 0;
@@ -51,14 +52,16 @@ const typewriter = (() => {
     const currentText = texts[count];
     const letter = currentText.slice(0, ++index);
 
-    typewriterEl.textContent = letter;
+    if (typewriterEl) {
+      typewriterEl.textContent = letter;
 
-    if (letter.length === currentText.length) {
-      count++;
-      index = 0;
-      setTimeout(type, 2000);
-    } else {
-      setTimeout(type, 100);
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
     }
   };
 
@@ -69,13 +72,34 @@ const typewriter = (() => {
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({ duration: 800, offset: 100, once: true });
 
+  // Menu visibility for desktop
+  if (window.innerWidth >= 768) {
+    menu.classList.remove("translate-y-[-200%]");
+  }
+
+  // Toggle menu handler
+  const toggleMenuHandler = () => {
+    menu.classList.toggle("translate-y-[-200%]");
+    const isHidden = menu.classList.contains("translate-y-[-200%]");
+    toggleMenu.querySelector("img").src =
+      ICONS.menu[isHidden ? "open" : "close"];
+  };
+
+  // Event listeners
   toggleMenu.addEventListener("click", toggleMenuHandler);
   toggleTheme.addEventListener("click", toggleThemeHandler);
 
+  // Handle nav links clicks
   navLinks.forEach((link) => {
-    link.addEventListener("click", toggleMenuHandler);
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        menu.classList.add("translate-y-[-200%]");
+        toggleMenu.querySelector("img").src = ICONS.menu.open;
+      }
+    });
   });
 
+  // Scroll handler
   window.addEventListener(
     "scroll",
     debounce(() => {
@@ -98,6 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 100)
   );
+  // Start typewriter effect
+  if (typewriterEl) {
+    typewriter.start();
+  }
 });
-
-window.addEventListener("load", typewriter.start);
