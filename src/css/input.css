@@ -38,9 +38,7 @@
     @apply fixed top-0 left-0 z-40 
            w-full h-16 md:h-20
            bg-white/90 dark:bg-primary-gray/90
-           backdrop-blur-sm 
-           border-b border-gray-200 dark:border-gray-700/50 
-           transition-colors duration-300;
+           backdrop-blur-sm;
   }
 
   .nav-menus {
@@ -89,13 +87,22 @@
            hover:shadow-xl transition-shadow duration-300;
   }
 
-  /* Skills */
-  .skill-bar {
-    @apply transition-all duration-300;
+  .about-card {
+    @apply bg-white dark:bg-gray-800 
+           rounded-xl p-6 md:p-8 
+           shadow-lg hover:shadow-xl 
+           transition-all duration-300;
   }
 
-  .skill-bar:hover .bg-primary {
-    @apply shadow-lg shadow-primary/30;
+  /* Skills */
+  .skill-bar {
+    @apply transform origin-left transition-all duration-1000
+           hover:shadow-lg hover:shadow-primary/30;
+  }
+
+  .skill-item {
+    @apply transform hover:scale-[1.01] 
+           transition-transform duration-300;
   }
 
   /* Tags */
@@ -133,6 +140,12 @@
   /* Reduce repeated properties */
   .interactive-element {
     @apply transition-all duration-300 hover:scale-105;
+  }
+  .contact-card {
+    @apply bg-white dark:bg-gray-800 
+           rounded-xl shadow-lg 
+           hover:shadow-xl 
+           transition-shadow duration-300;
   }
 }
 
@@ -232,5 +245,31 @@
     .nav-responsive {
       @apply static flex-row p-0;
     }
+  }
+
+  @keyframes float-bubble {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+  .animate-bubble {
+    animation: float-bubble 6s ease-in-out infinite;
+  }
+
+  .animate-bubble-delay-2 {
+    animation: float-bubble 7s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-bubble-delay-4 {
+    animation: float-bubble 8s ease-in-out infinite;
+    animation-delay: 4s;
   }
 }

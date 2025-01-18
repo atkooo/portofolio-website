@@ -87,96 +87,147 @@
       <!-- Home Section -->
       <section
         id="home"
-        class="min-h-screen flex items-center justify-center py-20 px-4"
+        class="min-h-screen flex items-center justify-center pt-24 md:pt-32 px-4 relative overflow-hidden"
       >
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl w-full">
+        <!-- Bubbles -->
+        <div class="absolute inset-0 pointer-events-none">
+          <div
+            class="absolute top-1/4 left-10 w-20 h-20 bg-primary/20 rounded-full animate-bubble"
+          ></div>
+          <div
+            class="absolute top-1/3 right-20 w-16 h-16 bg-blue-500/20 rounded-full animate-bubble-delay-2"
+          ></div>
+          <div
+            class="absolute bottom-1/4 left-1/3 w-24 h-24 bg-purple-500/20 rounded-full animate-bubble-delay-4"
+          ></div>
+          <div
+            class="absolute top-1/2 right-1/4 w-12 h-12 bg-primary/10 rounded-full animate-bubble"
+          ></div>
+          <div
+            class="absolute bottom-1/3 right-10 w-16 h-16 bg-blue-400/20 rounded-full animate-bubble-delay-2"
+          ></div>
+        </div>
+
+        <!-- Background decorative elements -->
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+        ></div>
+
+        <!-- Floating shapes -->
+        <div
+          class="absolute top-1/4 left-10 w-20 h-20 bg-primary/20 rounded-2xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 right-10 w-16 h-16 bg-blue-500/20 rounded-full animate-float animation-delay-2000"
+        ></div>
+
+        <div
+          class="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full relative z-10"
+        >
           <!-- Text Content -->
           <div
-            class="order-2 md:order-1 text-center md:text-left"
+            class="order-2 md:order-1 text-center md:text-left space-y-6"
             data-aos="fade-right"
           >
-            <span class="text-primary font-medium">👋 Hello, I'm</span>
+            <div class="inline-block px-4 py-2 bg-primary/10 rounded-full">
+              <span class="text-primary font-medium"
+                >✨ Welcome to my portfolio</span
+              >
+            </div>
+
             <h1
-              class="text-4xl md:text-6xl font-bold mt-2 mb-4 text-gray-800 dark:text-white"
+              class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white"
             >
-              Okta Maulana
+              I'm <span class="text-primary">Okta</span> Maulana
             </h1>
+
             <div
-              class="typewriter text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6"
+              class="typewriter text-xl md:text-2xl text-gray-600 dark:text-gray-300"
             >
               <span id="typewriter-text"></span>
               <span class="cursor">|</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Passionate developer crafting beautiful and functional web
-              experiences. Specialized in modern web technologies and creative
-              solutions.
+
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+              Turning creative ideas into exceptional web experiences.
+              Specialized in modern web technologies and user-centric design.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <!-- Modern CTA Buttons -->
+            <div class="flex flex-wrap gap-6 justify-center md:justify-start">
               <a
                 href="#contact"
-                class="px-8 py-3 bg-primary text-white rounded-full hover:shadow-lg hover:scale-105 transform transition-all duration-300"
+                class="group px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-all duration-300 flex items-center gap-2"
               >
-                Contact Me
+                Let's Talk
+                <svg
+                  class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
               <a
-                href="#portfolio"
+                href="#portofolio"
                 class="px-8 py-3 border-2 border-primary text-primary dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               >
-                View Work
+                View Portfolio
               </a>
             </div>
 
-            <!-- Social Links -->
-            <div class="mt-8 flex gap-4 justify-center md:justify-start">
+            <!-- Modern Social Links -->
+            <div class="flex gap-6 justify-center md:justify-start">
               <a
                 href="#"
-                class="social-icon"
+                class="social-link"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github text-xl"></i>
               </a>
               <a
                 href="#"
-                class="social-icon"
+                class="social-link"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin text-xl"></i>
               </a>
               <a
                 href="#"
-                class="social-icon"
+                class="social-link"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter text-xl"></i>
               </a>
             </div>
           </div>
 
           <!-- Image Content -->
           <div class="order-1 md:order-2 relative" data-aos="fade-left">
-            <!-- Update your home section image container -->
-            <div class="home-image-container" data-aos="fade-left">
+            <div class="relative z-10">
               <div
-                class="absolute inset-0 bg-primary/20 rounded-full animate-blob animation-delay-2000"
+                class="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full animate-pulse"
               ></div>
               <div
-                class="absolute inset-0 bg-primary/20 rounded-full animate-blob animation-delay-4000"
+                class="absolute -inset-0.5 bg-gradient-to-br from-primary to-blue-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
               ></div>
-              <div
-                class="relative rounded-full overflow-hidden border-4 border-primary/50"
-              >
-                <img
-                  src="./images/2.png"
-                  alt="Profile Picture"
-                  class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+              <img
+                src="./images/3.png"
+                alt="Profile"
+                class="relative rounded-full border-4 border-white dark:border-gray-800 shadow-xl transform hover:scale-105 transition duration-500"
+              />
             </div>
           </div>
         </div>
@@ -184,123 +235,159 @@
 
       <!-- About Section -->
       <section id="about" class="min-h-screen py-20 px-4">
-        <div class="container mx-auto">
-          <!-- Section Title -->
-          <h2
-            class="text-4xl md:text-5xl font-bold text-center mb-16"
-            data-aos="fade-up"
-          >
-            About Me
-            <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
-          </h2>
+        <div class="container mx-auto max-w-6xl">
+          <!-- Section Title with modern styling -->
+          <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-primary font-medium">DISCOVER</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">
+              About Me
+              <div
+                class="w-24 h-1 bg-gradient-to-r from-primary to-blue-500 mx-auto mt-4 rounded-full"
+              ></div>
+            </h2>
+          </div>
 
-          <div
-            class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
-          >
-            <!-- Image Side -->
+          <!-- Modern Two Column Layout -->
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Column - Image with decorative elements -->
             <div class="relative" data-aos="fade-right">
-              <div class="w-full max-w-md mx-auto">
-                <div class="relative z-10">
+              <!-- Decorative background elements -->
+              <div
+                class="absolute -top-4 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-2xl"
+              ></div>
+              <div
+                class="absolute -bottom-4 -right-4 w-72 h-72 bg-blue-500/10 rounded-full blur-2xl"
+              ></div>
+
+              <!-- Main image container -->
+              <div class="relative">
+                <div
+                  class="relative z-10 rounded-2xl overflow-hidden shadow-xl"
+                >
                   <img
-                    src="./images/3.png"
-                    alt="About Me"
-                    class="w-full h-auto rounded-lg shadow-xl"
+                    src="./images/2.png"
+                    alt="Profile Picture"
+                    class="w-full h-auto transform hover:scale-105 transition-transform duration-500"
                   />
-                  <div
-                    class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-lg -z-10"
-                  ></div>
-                  <div
-                    class="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary rounded-lg -z-10"
-                  ></div>
                 </div>
+                <!-- Decorative floating elements -->
+                <div
+                  class="absolute top-4 left-4 w-24 h-24 bg-primary/20 rounded-xl -z-10 animate-float"
+                ></div>
+                <div
+                  class="absolute bottom-4 right-4 w-32 h-32 bg-blue-500/20 rounded-full -z-10 animate-float animation-delay-2000"
+                ></div>
               </div>
             </div>
 
-            <!-- Content Side -->
-            <div class="space-y-6" data-aos="fade-left">
-              <h3 class="text-2xl font-semibold text-primary">
-                Frontend Developer
-              </h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                I am a passionate frontend developer with a keen eye for detail
-                and a determination to deliver the highest quality. I take great
-                pride in my work, and I always try to better myself with every
-                project I work on.
-              </p>
-
-              <!-- Skills -->
-              <div class="space-y-4">
-                <div class="skill-bar">
-                  <div class="flex justify-between mb-1">
-                    <span class="font-medium">HTML/CSS</span>
-                    <span>90%</span>
-                  </div>
-                  <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      class="bg-primary h-2 rounded-full"
-                      style="width: 90%"
-                    ></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <div class="flex justify-between mb-1">
-                    <span class="font-medium">JavaScript</span>
-                    <span>85%</span>
-                  </div>
-                  <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      class="bg-primary h-2 rounded-full"
-                      style="width: 85%"
-                    ></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <div class="flex justify-between mb-1">
-                    <span class="font-medium">React</span>
-                    <span>80%</span>
-                  </div>
-                  <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      class="bg-primary h-2 rounded-full"
-                      style="width: 80%"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Personal Info -->
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <p class="font-medium">Name:</p>
-                  <p class="text-gray-600 dark:text-gray-400">Okta Maulana</p>
-                </div>
-                <div>
-                  <p class="font-medium">Email:</p>
-                  <p class="text-gray-600 dark:text-gray-400">
-                    contact@example.com
-                  </p>
-                </div>
-                <div>
-                  <p class="font-medium">Location:</p>
-                  <p class="text-gray-600 dark:text-gray-400">
-                    Jakarta, Indonesia
-                  </p>
-                </div>
-                <div>
-                  <p class="font-medium">Availability:</p>
-                  <p class="text-gray-600 dark:text-gray-400">Available</p>
-                </div>
-              </div>
-
-              <!-- Download CV Button -->
-              <button
-                class="px-8 py-3 bg-primary text-white rounded-full hover:shadow-lg hover:scale-105 transform transition-all duration-300 flex items-center gap-2"
+            <!-- Right Column - Content with modern styling -->
+            <div class="space-y-8" data-aos="fade-left">
+              <!-- Professional Title -->
+              <div
+                class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <i class="fas fa-download"></i>
-                Download CV
-              </button>
+                <h3
+                  class="text-2xl font-bold text-gray-800 dark:text-white mb-4"
+                >
+                  Frontend Developer
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Passionate about creating beautiful and functional web
+                  experiences. I specialize in modern frontend technologies and
+                  love bringing creative designs to life.
+                </p>
+              </div>
+
+              <!-- Info Grid -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-code text-primary text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold">Experience</h4>
+                      <p class="text-gray-600 dark:text-gray-400">5+ Years</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-laptop-code text-blue-500 text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold">Projects</h4>
+                      <p class="text-gray-600 dark:text-gray-400">
+                        50+ Completed
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skills Section -->
+              <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-6">Skills & Expertise</h3>
+                <div class="space-y-4">
+                  <!-- HTML -->
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">HTML</span>
+                      <span class="text-primary">95%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        class="bg-primary h-2 rounded-full"
+                        style="width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- CSS -->
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">CSS/SCSS</span>
+                      <span class="text-blue-500">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        class="bg-blue-500 h-2 rounded-full"
+                        style="width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- JavaScript -->
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">JavaScript</span>
+                      <span class="text-yellow-500">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        class="bg-yellow-500 h-2 rounded-full"
+                        style="width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- React -->
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">React</span>
+                      <span class="text-green-500">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        class="bg-green-500 h-2 rounded-full"
+                        style="width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -449,79 +536,85 @@
             <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
           </h2>
 
+          <!-- Card Wrapper -->
           <div class="max-w-2xl mx-auto">
-            <!-- Content Side -->
-            <div class="space-y-6 md:space-y-8 px-4 md:px-0" data-aos="fade-up">
-              <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-primary">
-                  Get in Touch
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 text-lg">
-                  I'm currently available for freelance projects. If you have a
-                  project in mind or just want to say hi, feel free to send me a
-                  message.
-                </p>
-              </div>
+            <div
+              class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8"
+              data-aos="fade-up"
+            >
+              <!-- Content Side -->
+              <div class="space-y-6 md:space-y-8">
+                <div class="space-y-4">
+                  <h3 class="text-2xl font-semibold text-primary">
+                    Get in Touch
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-lg">
+                    I'm currently available for freelance projects. If you have
+                    a project in mind or just want to say hi, feel free to send
+                    me a message.
+                  </p>
+                </div>
 
-              <!-- Contact Form -->
-              <form class="space-y-4 md:space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <!-- Contact Form -->
+                <form class="space-y-4 md:space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div class="space-y-2">
+                      <label class="text-sm font-medium">Full Name</label>
+                      <input
+                        type="text"
+                        placeholder="John Doe"
+                        class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-sm font-medium">Email Address</label>
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+
                   <div class="space-y-2">
-                    <label class="text-sm font-medium">Full Name</label>
+                    <label class="text-sm font-medium">Subject</label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Project Inquiry"
                       class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                     />
                   </div>
+
                   <div class="space-y-2">
-                    <label class="text-sm font-medium">Email Address</label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                    />
+                    <label class="text-sm font-medium">Message</label>
+                    <textarea
+                      rows="4"
+                      placeholder="Your message here..."
+                      class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
+                    ></textarea>
                   </div>
-                </div>
 
-                <div class="space-y-2">
-                  <label class="text-sm font-medium">Subject</label>
-                  <input
-                    type="text"
-                    placeholder="Project Inquiry"
-                    class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                  />
-                </div>
-
-                <div class="space-y-2">
-                  <label class="text-sm font-medium">Message</label>
-                  <textarea
-                    rows="4"
-                    placeholder="Your message here..."
-                    class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-auto px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
-                >
-                  <span>Send Message</span>
-                  <svg
-                    class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="submit"
+                    class="w-auto px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </form>
+                    <span>Send Message</span>
+                    <svg
+                      class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
