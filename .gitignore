@@ -6,7 +6,7 @@ node_modules/
 # Production build
 /build
 /dist
-/out
+public/css/
 
 # Environment variables
 .env
