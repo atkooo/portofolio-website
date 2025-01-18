@@ -12,8 +12,20 @@
    2. BASE STYLES
 ============================ */
 @layer base {
+  /* Reduce repeated font declarations */
+  :root {
+    --font-primary: "Poppins", sans-serif;
+  }
+
   html {
     scroll-behavior: smooth;
+    font-family: var(--font-primary);
+  }
+
+  /* Use CSS custom properties for animations */
+  :root {
+    --transition-standard: 300ms;
+    --transition-slow: 500ms;
   }
 
   body {
@@ -114,6 +126,20 @@
   .main-content {
     @apply pt-16 md:pt-20; /* Added padding-top to account for fixed navbar */
   }
+
+  /* Simplified class structure */
+  .nav-base {
+    @apply fixed top-0 left-0 z-40 w-full transition-colors;
+  }
+
+  .btn-base {
+    @apply px-6 py-2 rounded-full transition-all duration-300;
+  }
+
+  /* Reduce repeated properties */
+  .interactive-element {
+    @apply transition-all duration-300 hover:scale-105;
+  }
 }
 
 /* ============================
@@ -200,5 +226,17 @@
   .project-btn {
     @apply px-4 py-2 bg-white text-primary rounded-full flex items-center gap-2 
            hover:bg-gray-100 transition-colors duration-300;
+  }
+
+  /* Optimized animations */
+  .animate-fade {
+    animation: fade var(--transition-standard) ease-in-out;
+  }
+
+  /* Simplified media queries */
+  @screen md {
+    .nav-responsive {
+      @apply static flex-row p-0;
+    }
   }
 }
