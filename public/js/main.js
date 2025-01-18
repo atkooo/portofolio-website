@@ -73,8 +73,15 @@ const typewriter = (() => {
   return { start: type };
 })();
 
+// Remove duplicate event listeners and consolidate handlers
+const handlers = {
+  menu: toggleMenuHandler,
+  theme: toggleThemeHandler,
+};
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
+  // Single initialization
   AOS.init({ duration: 800, offset: 100, once: true });
 
   // Initial mobile menu state
@@ -82,9 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.add("translate-y-[-200%]");
   }
 
-  // Single event listener for menu toggle - remove duplicate
-  toggleMenu.addEventListener("click", toggleMenuHandler);
-  toggleTheme.addEventListener("click", toggleThemeHandler);
+  // Group event listeners
+  [
+    [toggleMenu, "click", handlers.menu],
+    [toggleTheme, "click", handlers.theme],
+  ].forEach(([element, event, handler]) => {
+    element?.addEventListener(event, handler);
+  });
 
   // Handle nav links clicks
   navLinks.forEach((link) => {

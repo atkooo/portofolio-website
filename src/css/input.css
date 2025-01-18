@@ -62,9 +62,8 @@
   }
 
   .nav-link {
-    @apply relative text-gray-700 dark:text-white
-           hover:text-primary dark:hover:text-primary 
-           transition-colors duration-300;
+    @apply interactive-base text-gray-700 dark:text-white
+           hover:text-primary dark:hover:text-primary;
   }
 
   .nav-link-active {
@@ -83,15 +82,13 @@
 
   /* Cards */
   .project-card {
-    @apply bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg 
-           hover:shadow-xl transition-shadow duration-300;
+    @apply interactive-base bg-white dark:bg-gray-800 
+           rounded-xl overflow-hidden shadow-lg;
   }
 
-  .about-card {
-    @apply bg-white dark:bg-gray-800 
-           rounded-xl p-6 md:p-8 
-           shadow-lg hover:shadow-xl 
-           transition-all duration-300;
+  .about-card,
+  .contact-card {
+    @apply card-base;
   }
 
   /* Skills */
@@ -145,6 +142,19 @@
     @apply bg-white dark:bg-gray-800 
            rounded-xl shadow-lg 
            hover:shadow-xl 
+           transition-shadow duration-300;
+  }
+
+  /* Base interactive styles */
+  .interactive-base {
+    @apply transition-all duration-300;
+  }
+
+  /* Remove duplicate card styles */
+  .card-base {
+    @apply bg-white dark:bg-gray-800 
+           rounded-xl shadow-lg
+           hover:shadow-xl
            transition-shadow duration-300;
   }
 }
@@ -210,10 +220,10 @@
 
   /* Keyframes untuk shimmer loading */
   @keyframes shimmer {
-    0% {
+    from {
       background-position: -1000px 0;
     }
-    100% {
+    to {
       background-position: 1000px 0;
     }
   }
@@ -270,6 +280,29 @@
 
   .animate-bubble-delay-4 {
     animation: float-bubble 8s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+
+  /* Remove duplicate animation definitions */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Remove redundant delay classes */
+  .delay-2 {
+    animation-delay: 2s;
+  }
+  .delay-4 {
     animation-delay: 4s;
   }
 }
