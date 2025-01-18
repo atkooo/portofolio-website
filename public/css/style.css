@@ -666,6 +666,11 @@ h1,
   }
 }
 
+.nav {
+  height: 64px;
+  /* Fixed height for mobile */
+}
+
 .nav-menus{
   position: fixed;
   top: 0px;
@@ -883,6 +888,45 @@ h1,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+/* Home Image Container */
+
+.home-image-container{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  height: 16rem;
+  width: 16rem;
+}
+
+@media (min-width: 768px){
+  .home-image-container{
+    margin-top: 0px;
+    height: 24rem;
+    width: 24rem;
+  }
+}
+
+.home-image-container {
+  /* Added margin-top for mobile */
+}
+
+/* Main Content */
+
+.main-content{
+  padding-top: 4rem;
+}
+
+@media (min-width: 768px){
+  .main-content{
+    padding-top: 5rem;
+  }
+}
+
+.main-content {
+  /* Added padding-top to account for fixed navbar */
+}
+
 .fixed{
   position: fixed;
 }
@@ -982,6 +1026,10 @@ h1,
 
 .mb-8{
   margin-bottom: 2rem;
+}
+
+.mt-16{
+  margin-top: 4rem;
 }
 
 .mt-2{
@@ -1088,20 +1136,16 @@ h1,
   max-width: 0px;
 }
 
+.max-w-2xl{
+  max-width: 42rem;
+}
+
 .max-w-6xl{
   max-width: 72rem;
 }
 
 .max-w-md{
   max-width: 28rem;
-}
-
-.max-w-sm{
-  max-width: 24rem;
-}
-
-.max-w-2xl{
-  max-width: 42rem;
 }
 
 .flex-1{
@@ -1203,10 +1247,6 @@ h1,
 
 .overflow-hidden{
   overflow: hidden;
-}
-
-.rounded-2xl{
-  border-radius: 1rem;
 }
 
 .rounded-full{
@@ -1386,6 +1426,10 @@ h1,
   padding-bottom: 2rem;
 }
 
+.pt-16{
+  padding-top: 4rem;
+}
+
 .pt-28{
   padding-top: 7rem;
 }
@@ -1495,10 +1539,6 @@ h1,
 
 .opacity-100{
   opacity: 1;
-}
-
-.opacity-90{
-  opacity: 0.9;
 }
 
 .shadow-lg{
@@ -1859,22 +1899,6 @@ h1,
     position: static;
   }
 
-  .md\:-bottom-6{
-    bottom: -1.5rem;
-  }
-
-  .md\:-left-6{
-    left: -1.5rem;
-  }
-
-  .md\:-right-6{
-    right: -1.5rem;
-  }
-
-  .md\:-top-6{
-    top: -1.5rem;
-  }
-
   .md\:order-1{
     order: 1;
   }
@@ -1895,16 +1919,8 @@ h1,
     height: 5rem;
   }
 
-  .md\:h-32{
-    height: 8rem;
-  }
-
   .md\:h-96{
     height: 24rem;
-  }
-
-  .md\:w-32{
-    width: 8rem;
   }
 
   .md\:w-96{
@@ -1938,10 +1954,6 @@ h1,
 
   .md\:gap-12{
     gap: 3rem;
-  }
-
-  .md\:gap-16{
-    gap: 4rem;
   }
 
   .md\:gap-6{

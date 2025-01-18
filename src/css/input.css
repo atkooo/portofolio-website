@@ -43,6 +43,7 @@
            py-3 md:py-0 w-full backdrop-blur-sm 
            border-b border-gray-200 dark:border-gray-700/50 
            transition-colors duration-300;
+    height: 64px; /* Fixed height for mobile */
   }
 
   .nav-menus {
@@ -101,6 +102,17 @@
     @apply w-10 h-10 rounded-full flex items-center justify-center 
            text-primary border border-primary hover:bg-primary 
            hover:text-white transition-all duration-300;
+  }
+
+  /* Home Image Container */
+  .home-image-container {
+    @apply relative w-64 h-64 md:w-96 md:h-96 mx-auto 
+           mt-16 md:mt-0; /* Added margin-top for mobile */
+  }
+
+  /* Main Content */
+  .main-content {
+    @apply pt-16 md:pt-20; /* Added padding-top to account for fixed navbar */
   }
 }
 
