@@ -34,7 +34,7 @@ Thumbs.db
 /coverage
 
 # Tailwind CSS
-/tailwind.output.css
+/public/css/
 
 # Misc
 *.log
