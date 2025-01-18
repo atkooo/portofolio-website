@@ -18,13 +18,18 @@ const ICONS = {
   },
 };
 
-// Optimized menu toggle
-const toggleMenuHandler = () => {
-  menu.classList.toggle("translate-y-[-200%]"); // Changed from -100% to -200%
-  const isHidden = menu.classList.contains("translate-y-[-200%]");
-  toggleMenu.querySelector("img").src = ICONS.menu[isHidden ? "open" : "close"];
-};
+const toggleMenuHandler = (e) => {
+  if (e) e.preventDefault();
+  console.log("Toggle menu clicked");
 
+  // Toggle nav menu visibility
+  menu.classList.toggle("menu-visible");
+
+  // Update icon
+  const isVisible = menu.classList.contains("menu-visible");
+  toggleMenu.querySelector("img").src =
+    ICONS.menu[isVisible ? "close" : "open"];
+};
 // Optimized theme toggle
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
@@ -72,20 +77,12 @@ const typewriter = (() => {
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({ duration: 800, offset: 100, once: true });
 
-  // Menu visibility for desktop
-  if (window.innerWidth >= 768) {
-    menu.classList.remove("translate-y-[-200%]");
+  // Initial mobile menu state
+  if (window.innerWidth < 768) {
+    menu.classList.add("translate-y-[-200%]");
   }
 
-  // Toggle menu handler
-  const toggleMenuHandler = () => {
-    menu.classList.toggle("translate-y-[-200%]");
-    const isHidden = menu.classList.contains("translate-y-[-200%]");
-    toggleMenu.querySelector("img").src =
-      ICONS.menu[isHidden ? "open" : "close"];
-  };
-
-  // Event listeners
+  // Single event listener for menu toggle - remove duplicate
   toggleMenu.addEventListener("click", toggleMenuHandler);
   toggleTheme.addEventListener("click", toggleThemeHandler);
 

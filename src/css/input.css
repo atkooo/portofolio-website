@@ -58,7 +58,7 @@
          transition-transform duration-500 ease-in-out;
   }
 
-  /* Add this new style */
+  /* Add this class for menu visibility */
   .menu-visible {
     @apply translate-y-0;
   }
