@@ -7,7 +7,6 @@ const toggleMenu = document.querySelector("#toggle-menu");
 const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
-const profileImage = document.querySelector("#profile-image");
 
 // Konfigurasi ikon untuk menu dan tema
 const ICONS = {
@@ -47,7 +46,6 @@ const toggleThemeHandler = () => {
   const icon = switchThumb.querySelector("img");
 
   icon.src = ICONS.theme[isDark ? "light" : "dark"];
-  updateProfileImage(isDark);
   updateLogoImage(isDark);
   localStorage.setItem("theme", isDark ? "dark" : "light");
 };
@@ -99,11 +97,6 @@ const typewriter = (() => {
 const handlers = {
   menu: toggleMenuHandler,
   theme: toggleThemeHandler,
-};
-
-// Fungsi untuk mengubah gambar profil berdasarkan tema
-const updateProfileImage = (isDark) => {
-  profileImage.src = isDark ? "./images/3.png" : "./images/2.png";
 };
 
 // Update logo image based on theme
@@ -182,13 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
     html.classList.add("dark");
     const switchThumb = toggleTheme.querySelector("div img");
     switchThumb.src = ICONS.theme.light;
-    updateProfileImage(true);
     updateLogoImage(true);
   } else {
     html.classList.remove("dark");
     const switchThumb = toggleTheme.querySelector("div img");
     switchThumb.src = ICONS.theme.dark;
-    updateProfileImage(false);
     updateLogoImage(false);
   }
 
