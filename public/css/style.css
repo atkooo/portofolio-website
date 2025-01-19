@@ -705,8 +705,6 @@ body:is(.dark *){
   }
 }
 
-/* Remove .menu-visible class as we're using translate directly */
-
 .nav-link{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1969,14 +1967,6 @@ body:is(.dark *){
   to {
     background-position: 1000px 0;
   }
-}
-
-/* Styling animasi shimmer */
-
-.loading-animation {
-  animation: shimmer 2s infinite linear;
-  background: linear-gradient(to right, #f6f7f8 4%, #edeef1 25%, #f6f7f8 36%);
-  background-size: 1000px 100%;
 }
 
 .overlay{

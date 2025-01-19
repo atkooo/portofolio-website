@@ -7,7 +7,6 @@ const toggleMenu = document.querySelector("#toggle-menu");
 const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
-const profileImage = document.querySelector("#profile-image");
 
 // Konfigurasi ikon untuk menu dan tema
 const ICONS = {

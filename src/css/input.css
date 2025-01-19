@@ -59,8 +59,6 @@
          backdrop-blur-sm;
   }
 
-  /* Remove .menu-visible class as we're using translate directly */
-
   .nav-link {
     @apply interactive-base 
          text-gray-700 dark:text-gray-200
@@ -195,13 +193,6 @@
     to {
       background-position: 1000px 0;
     }
-  }
-
-  /* Styling animasi shimmer */
-  .loading-animation {
-    animation: shimmer 2s infinite linear;
-    background: linear-gradient(to right, #f6f7f8 4%, #edeef1 25%, #f6f7f8 36%);
-    background-size: 1000px 100%;
   }
 
   .overlay {
