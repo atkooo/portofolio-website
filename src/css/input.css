@@ -43,6 +43,25 @@
            backdrop-blur-sm;
   }
 
+  .social-links {
+    @apply flex items-center gap-4;
+  }
+  .social-link {
+    @apply interactive-base
+         flex items-center justify-center
+         w-10 h-10 rounded-lg
+         bg-white/10 dark:bg-primary-gray/30
+         text-primary-black dark:text-primary-white
+         hover:bg-primary hover:text-primary-white
+         dark:hover:bg-primary dark:hover:text-primary-white
+         dark:hover:shadow-[0_0_15px_#00ADB5]
+         hover:scale-110 hover:rotate-6
+         transform-gpu
+         border border-transparent
+         dark:border-primary-gray/50
+         dark:hover:border-primary;
+  }
+
   .nav-link-active {
     @apply text-primary dark:text-primary
          relative
@@ -212,6 +231,22 @@
   .project-btn {
     @apply px-4 py-2 bg-white text-primary rounded-full flex items-center gap-2 
            hover:bg-gray-100 transition-colors duration-300;
+  }
+
+  @keyframes social-float {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-5px) rotate(3deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+
+  .animate-social {
+    animation: social-float 3s ease-in-out infinite;
   }
 
   /* Update animation for better visibility */
