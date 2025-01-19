@@ -4,8 +4,8 @@ node_modules/
 .pnp.js
 
 # Production build
-public/css/
-public/js/aos.js
+# public/css/
+# public/js/aos.js
 
 # Environment variables
 .env
