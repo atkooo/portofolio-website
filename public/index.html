@@ -284,10 +284,10 @@
         - Experience highlights
         - Progress bars
       -->
-      <section id="about" class="min-h-screen py-20 px-4">
+      <section id="about" class="min-h-screen py-12 sm:py-16 md:py-20 px-4">
         <div class="container mx-auto max-w-6xl">
           <!-- Title -->
-          <div class="text-center mb-16" data-aos="fade-up">
+          <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <span class="text-primary font-medium">DISCOVER</span>
             <h2 class="text-4xl md:text-5xl font-bold mt-2">
               About Me
@@ -332,106 +332,121 @@
             <div class="w-16 h-0.5 bg-primary mx-auto mt-4"></div>
           </div>
 
-          <!-- Modern Two Column Layout -->
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Left Column - Image with decorative elements -->
-            <div class="relative" data-aos="fade-right">
-              <!-- Decorative background elements -->
-              <div
-                class="absolute -top-4 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-2xl"
-              ></div>
-              <div
-                class="absolute -bottom-4 -right-4 w-72 h-72 bg-blue-500/10 rounded-full blur-2xl"
-              ></div>
-
-              <!-- Main image container -->
-              <div class="relative">
+          <!-- Grid Container -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          >
+            <!-- Personal Info Card -->
+            <div
+              class="card-base p-6 md:p-8 col-span-1 md:col-span-2 lg:col-span-1"
+            >
+              <div class="relative" data-aos="fade-right">
+                <!-- Decorative background elements -->
                 <div
-                  class="relative z-10 rounded-2xl overflow-hidden shadow-xl"
-                >
-                  <img
-                    src="./images/4.jpg"
-                    alt="Profile Picture"
-                    class="w-full h-auto transform hover:scale-105 transition-transform duration-500"
-                  />
+                  class="absolute -top-4 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-2xl"
+                ></div>
+                <div
+                  class="absolute -bottom-4 -right-4 w-72 h-72 bg-blue-500/10 rounded-full blur-2xl"
+                ></div>
+
+                <!-- Main image container -->
+                <div class="relative">
+                  <div
+                    class="relative z-10 rounded-2xl overflow-hidden shadow-xl"
+                  >
+                    <img
+                      src="./images/4.jpg"
+                      alt="Profile Picture"
+                      class="w-full h-auto transform hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  <!-- Decorative floating elements -->
+                  <div
+                    class="absolute top-4 left-4 w-24 h-24 bg-primary/20 rounded-xl -z-10 animate-float"
+                  ></div>
+                  <div
+                    class="absolute bottom-4 right-4 w-32 h-32 bg-blue-500/20 rounded-full -z-10 animate-float animation-delay-2000"
+                  ></div>
                 </div>
-
-                <!-- Decorative floating elements -->
-                <div
-                  class="absolute top-4 left-4 w-24 h-24 bg-primary/20 rounded-xl -z-10 animate-float"
-                ></div>
-                <div
-                  class="absolute bottom-4 right-4 w-32 h-32 bg-blue-500/20 rounded-full -z-10 animate-float animation-delay-2000"
-                ></div>
               </div>
             </div>
 
-            <!-- Right Column - Content with modern styling -->
-            <div class="space-y-8" data-aos="fade-left">
-              <!-- Professional Title -->
-              <div
-                class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <h3
-                  class="text-2xl font-bold text-gray-800 dark:text-white mb-4"
-                >
-                  Full-Stack Developer
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  I'm a passionate software developer with a strong foundation
-                  in frontend and backend technologies. I specialize in creating
-                  interactive, responsive, and user-friendly web applications.
-                </p>
-              </div>
-
-              <!-- Info Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                <!-- First Card -->
+            <!-- Skills Card -->
+            <div
+              class="card-base p-6 md:p-8 col-span-1 md:col-span-2 lg:col-span-2"
+            >
+              <div class="space-y-8" data-aos="fade-left">
+                <!-- Professional Title -->
                 <div
-                  class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                  class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
+                  <h3
+                    class="text-2xl font-bold text-gray-800 dark:text-white mb-4"
+                  >
+                    Full-Stack Developer
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    I'm a passionate software developer with a strong foundation
+                    in frontend and backend technologies. I specialize in
+                    creating interactive, responsive, and user-friendly web
+                    applications.
+                  </p>
+                </div>
+
+                <!-- Info Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                  <!-- First Card -->
                   <div
-                    class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                   >
                     <div
-                      class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
+                      class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
                     >
-                      <i class="fas fa-code text-primary text-2xl"></i>
+                      <div
+                        class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
+                      >
+                        <i class="fas fa-code text-primary text-2xl"></i>
+                      </div>
+                      <div class="text-center sm:text-left">
+                        <h4 class="text-lg font-semibold">Experience</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-1">
+                          4+ Years
+                        </p>
+                      </div>
                     </div>
-                    <div class="text-center sm:text-left">
-                      <h4 class="text-lg font-semibold">Experience</h4>
-                      <p class="text-gray-600 dark:text-gray-400 mt-1">
-                        4+ Years
-                      </p>
+                  </div>
+
+                  <!-- Second Card -->
+                  <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                  >
+                    <div
+                      class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
+                    >
+                      <div
+                        class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
+                      >
+                        <i
+                          class="fas fa-project-diagram text-primary text-2xl"
+                        ></i>
+                      </div>
+                      <div class="text-center sm:text-left">
+                        <h4 class="text-lg font-semibold">Projects</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-1">
+                          50+ Completed
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Second Card -->
-                <div
-                  class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <div
-                    class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
-                  >
-                    <div
-                      class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
-                    >
-                      <i
-                        class="fas fa-project-diagram text-primary text-2xl"
-                      ></i>
-                    </div>
-                    <div class="text-center sm:text-left">
-                      <h4 class="text-lg font-semibold">Projects</h4>
-                      <p class="text-gray-600 dark:text-gray-400 mt-1">
-                        50+ Completed
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </div>
 
-              <!-- Skills Section -->
+            <!-- Experience Card -->
+            <div
+              class="card-base p-6 md:p-8 col-span-1 md:col-span-2 lg:col-span-3"
+            >
               <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
                 <h3 class="text-xl font-bold mb-6">Skills & Expertise</h3>
                 <div class="space-y-4">
