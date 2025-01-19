@@ -21,11 +21,13 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-primary);
+    @apply overflow-x-hidden; /* Add this line */
   }
 
   body {
     @apply bg-primary-white dark:bg-primary-black 
-           text-primary-black dark:text-primary-white;
+           text-primary-black dark:text-primary-white
+           overflow-x-hidden; /* Add this line */
   }
 }
 
