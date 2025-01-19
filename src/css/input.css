@@ -133,12 +133,6 @@
            hover:text-white transition-all duration-300;
   }
 
-  /* Home Image Container */
-  .home-image-container {
-    @apply relative w-64 h-64 md:w-96 md:h-96 mx-auto 
-           mt-16 md:mt-0;
-  }
-
   /* Main Content */
   .main-content {
     @apply pt-16 md:pt-20;
