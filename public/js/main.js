@@ -33,16 +33,16 @@ const ICONS = {
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
 
-  const isMenuOpen = !menu.classList.contains("translate-y-[-200%]");
+  const isMenuOpen = menu.classList.contains("translate-y-0");
   const menuIcon = toggleMenu.querySelector("img");
 
-  // Toggle menu visibility
+  // Toggle menu visibility using translate classes
+  menu.classList.toggle("translate-y-0");
   menu.classList.toggle("translate-y-[-200%]");
 
   // Update menu icon
   menuIcon.src = isMenuOpen ? ICONS.menu.open : ICONS.menu.close;
 };
-
 // Fungsi untuk mengatur tema gelap/terang
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
@@ -120,8 +120,6 @@ const updateLogoImage = (isDark) => {
 document.addEventListener("DOMContentLoaded", () => {
   // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
-
-  // Initialize mobile menu state and icon
   if (window.innerWidth < 768) {
     menu.classList.add("translate-y-[-200%]");
     toggleMenu.querySelector("img").src = ICONS.menu.open;
