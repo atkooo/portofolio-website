@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Library untuk animasi scroll -->
     <link href="./css/aos.css" rel="stylesheet" />
-
     <!-- Font Awesome untuk ikon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="./images/icon-white.svg" />
   </head>
 
   <body>
@@ -291,6 +291,27 @@
                 class="w-24 h-1 bg-gradient-to-r from-primary to-blue-500 mx-auto mt-4 rounded-full"
               ></div>
             </h2>
+            <br />
+            <!-- Add CV Download Button -->
+            <a
+              href="./cv/cv-okta.pdf"
+              download
+              class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Download CV
+            </a>
           </div>
 
           <!-- Motto -->
@@ -360,30 +381,45 @@
               </div>
 
               <!-- Info Grid -->
-              <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
-                  <div class="flex items-center gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                <!-- First Card -->
+                <div
+                  class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
+                  >
                     <div
-                      class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                      class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
                     >
-                      <i class="fas fa-code text-primary text-xl"></i>
+                      <i class="fas fa-code text-primary text-2xl"></i>
                     </div>
-                    <div>
-                      <h4 class="font-semibold">Experience</h4>
-                      <p class="text-gray-600 dark:text-gray-400">4+ Years</p>
+                    <div class="text-center sm:text-left">
+                      <h4 class="text-lg font-semibold">Experience</h4>
+                      <p class="text-gray-600 dark:text-gray-400 mt-1">
+                        4+ Years
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
-                  <div class="flex items-center gap-3">
+
+                <!-- Second Card -->
+                <div
+                  class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row items-center sm:items-start gap-4"
+                  >
                     <div
-                      class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center"
+                      class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center"
                     >
-                      <i class="fas fa-laptop-code text-blue-500 text-xl"></i>
+                      <i
+                        class="fas fa-project-diagram text-primary text-2xl"
+                      ></i>
                     </div>
-                    <div>
-                      <h4 class="font-semibold">Projects</h4>
-                      <p class="text-gray-600 dark:text-gray-400">
+                    <div class="text-center sm:text-left">
+                      <h4 class="text-lg font-semibold">Projects</h4>
+                      <p class="text-gray-600 dark:text-gray-400 mt-1">
                         50+ Completed
                       </p>
                     </div>
