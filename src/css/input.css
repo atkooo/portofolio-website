@@ -68,31 +68,10 @@
          bg-transparent;
   }
 
-  .nav-link-active {
-    @apply text-primary border-b-2 border-primary dark:text-primary;
-  }
-
   /* Buttons */
   .filter-btn {
     @apply px-6 py-2 rounded-full border-2 border-primary text-primary 
            hover:bg-primary hover:text-white transition-all duration-300;
-  }
-
-  .theme-switch {
-    @apply relative z-30 w-12 h-6 rounded-full 
-       bg-gray-200 dark:bg-primary-black
-       flex items-center transition-all duration-300 
-       focus:outline-none
-       border-2 border-gray-300 dark:border-primary;
-  }
-
-  .switch-thumb {
-    @apply w-5 h-5 rounded-full 
-       bg-primary dark:bg-white
-       transform translate-x-0.5 dark:translate-x-6 
-       transition-all duration-300
-       flex items-center justify-center
-       shadow-md;
   }
 
   .filter-btn.active {
@@ -105,20 +84,8 @@
            rounded-xl overflow-hidden shadow-lg;
   }
 
-  .about-card,
   .contact-card {
     @apply card-base;
-  }
-
-  /* Skills */
-  .skill-bar {
-    @apply transform origin-left transition-all duration-1000
-           hover:shadow-lg hover:shadow-primary/30;
-  }
-
-  .skill-item {
-    @apply transform hover:scale-[1.01] 
-           transition-transform duration-300;
   }
 
   /* Tags */
@@ -126,29 +93,11 @@
     @apply px-3 py-1 bg-primary/10 text-primary rounded-full text-sm;
   }
 
-  /* Social Icons */
-  .social-icon {
-    @apply w-10 h-10 rounded-full flex items-center justify-center 
-           text-primary border border-primary hover:bg-primary 
-           hover:text-white transition-all duration-300;
-  }
-
   /* Main Content */
   .main-content {
     @apply pt-16 md:pt-20;
   }
 
-  .nav-base {
-    @apply fixed top-0 left-0 z-40 w-full transition-colors;
-  }
-
-  .btn-base {
-    @apply px-6 py-2 rounded-full transition-all duration-300;
-  }
-
-  .interactive-element {
-    @apply transition-all duration-300 hover:scale-105;
-  }
   .contact-card {
     @apply bg-white dark:bg-gray-800 
            rounded-xl shadow-lg 
@@ -265,17 +214,6 @@
            hover:bg-gray-100 transition-colors duration-300;
   }
 
-  /* Optimized animations */
-  .animate-fade {
-    animation: fade var(--transition-standard) ease-in-out;
-  }
-
-  /* Simplified media queries */
-  @screen md {
-    .nav-responsive {
-      @apply static flex-row p-0;
-    }
-  }
   /* Update animation for better visibility */
   @keyframes float-bubble {
     0% {
@@ -306,10 +244,6 @@
   .bubble-effect {
     @apply opacity-70 dark:opacity-40;
     filter: blur(40px);
-  }
-  /* Optional: Add glass morphism effect to your content */
-  .glass-effect {
-    @apply bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg;
   }
 
   .animate-bubble {
