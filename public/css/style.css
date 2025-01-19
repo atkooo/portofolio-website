@@ -1206,6 +1206,10 @@ body:is(.dark *){
   margin-top: 1.5rem;
 }
 
+.mt-8{
+  margin-top: 2rem;
+}
+
 .block{
   display: block;
 }
@@ -2410,6 +2414,11 @@ body:is(.dark *){
     padding-bottom: 1.5rem;
   }
 
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .sm\:text-left{
     text-align: left;
   }
@@ -2584,5 +2593,10 @@ body:is(.dark *){
 
   .lg\:gap-12{
     gap: 3rem;
+  }
+
+  .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
