@@ -32,16 +32,13 @@ const ICONS = {
 // Update toggleMenuHandler function
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
-
-  const isMenuOpen = menu.classList.contains("translate-y-0");
-  const menuIcon = toggleMenu.querySelector("img");
-
-  // Toggle menu visibility using translate classes
   menu.classList.toggle("translate-y-0");
-  menu.classList.toggle("translate-y-[-200%]");
+  menu.classList.toggle("translate-y-[-150vh]");
 
-  // Update menu icon
-  menuIcon.src = isMenuOpen ? ICONS.menu.open : ICONS.menu.close;
+  const isOpen = menu.classList.contains("translate-y-0");
+  toggleMenu.querySelector("img").src = isOpen
+    ? ICONS.menu.close
+    : ICONS.menu.open;
 };
 // Fungsi untuk mengatur tema gelap/terang
 const toggleThemeHandler = () => {
@@ -121,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
   if (window.innerWidth < 768) {
-    menu.classList.add("translate-y-[-200%]");
+    menu.classList.add("translate-y-[-150vh]");
     toggleMenu.querySelector("img").src = ICONS.menu.open;
   }
 
@@ -137,7 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 768) {
-        menu.classList.add("translate-y-[-200%]");
+        menu.classList.remove("translate-y-0");
+        menu.classList.add("translate-y-[-150vh]");
         toggleMenu.querySelector("img").src = ICONS.menu.open;
       }
     });
