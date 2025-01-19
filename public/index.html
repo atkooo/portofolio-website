@@ -770,13 +770,17 @@
       - Copyright
       - Social media
     -->
+    <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-300">
       <div class="container mx-auto py-12 px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Update grid columns and gap -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
+        >
           <!-- About/Contact Column -->
-          <div class="space-y-4">
+          <div class="space-y-4 md:col-span-2 lg:col-span-1">
             <h3 class="text-2xl font-bold text-white mb-4">Okta Maulana</h3>
-            <p class="text-gray-400 leading-relaxed">
+            <p class="text-gray-400 leading-relaxed max-w-md">
               Turning Ideas into Reality through Code and Creativity
             </p>
             <div class="flex items-center space-x-2 text-gray-400">
@@ -790,9 +794,9 @@
           </div>
 
           <!-- Quick Links -->
-          <div>
+          <div class="md:mt-0">
             <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
-            <ul class="space-y-2">
+            <ul class="grid grid-cols-2 md:grid-cols-1 gap-2">
               <li>
                 <a
                   href="#home"
@@ -833,21 +837,21 @@
           </div>
 
           <!-- Newsletter -->
-          <div>
+          <div class="md:mt-0">
             <h3 class="text-xl font-semibold text-white mb-4">Newsletter</h3>
-            <p class="text-gray-400 mb-4">
+            <p class="text-gray-400 mb-4 max-w-md">
               Subscribe to stay updated with my latest projects and tech
               articles.
             </p>
-            <form class="flex gap-2">
+            <form class="flex gap-2 max-w-md">
               <input
                 type="email"
                 placeholder="Enter your email"
-                class="bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary flex-1"
+                class="bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary flex-1 w-full"
               />
               <button
                 type="submit"
-                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-300 whitespace-nowrap"
               >
                 <i class="fas fa-paper-plane"></i>
               </button>
@@ -862,12 +866,12 @@
           <div
             class="flex flex-col md:flex-row justify-between items-center gap-4"
           >
-            <p class="text-gray-400">
+            <p class="text-gray-400 text-center md:text-left">
               © 2024 Okta Maulana. All rights reserved.
             </p>
 
             <!-- Social Links -->
-            <div class="flex gap-4">
+            <div class="flex gap-6">
               <a
                 href="https://github.com/atkooo"
                 class="hover:text-primary transition-colors duration-300"
