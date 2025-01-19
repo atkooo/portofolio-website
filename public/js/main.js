@@ -43,9 +43,12 @@ const toggleMenuHandler = (e) => {
 // Fungsi untuk mengatur tema gelap/terang
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
-  toggleTheme.querySelector("img").src = ICONS.theme[isDark ? "light" : "dark"];
+  const switchThumb = toggleTheme.querySelector("div");
+  const icon = switchThumb.querySelector("img");
+
+  icon.src = ICONS.theme[isDark ? "light" : "dark"];
   updateProfileImage(isDark);
-  updateLogoImage(isDark); // Add this line
+  updateLogoImage(isDark);
   localStorage.setItem("theme", isDark ? "dark" : "light");
 };
 
@@ -177,14 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
     (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     html.classList.add("dark");
-    toggleTheme.querySelector("img").src = ICONS.theme.light;
+    const switchThumb = toggleTheme.querySelector("div img");
+    switchThumb.src = ICONS.theme.light;
     updateProfileImage(true);
-    updateLogoImage(true); // Add this line
+    updateLogoImage(true);
   } else {
     html.classList.remove("dark");
-    toggleTheme.querySelector("img").src = ICONS.theme.dark;
+    const switchThumb = toggleTheme.querySelector("div img");
+    switchThumb.src = ICONS.theme.dark;
     updateProfileImage(false);
-    updateLogoImage(false); // Add this line
+    updateLogoImage(false);
   }
 
   // Add resize event listener to handle screen size changes
