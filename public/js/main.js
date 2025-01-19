@@ -1,42 +1,52 @@
-// Cache DOM queries and use const
+// ====================
+// ELEMENT SELECTIONS & CONSTANTS
+// ====================
 const html = document.documentElement;
 const menu = document.querySelector("#menu");
 const toggleMenu = document.querySelector("#toggle-menu");
 const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
+const profileImage = document.querySelector("#profile-image");
 
-// Use object for icons configuration
+// Konfigurasi ikon untuk menu dan tema
 const ICONS = {
   menu: {
-    open: "./images/icons/icon-menu.svg",
-    close: "./images/icons/icon-close.svg",
+    open: "./images/icons/icon-menu.svg", // Ikon untuk menu tertutup
+    close: "./images/icons/icon-close.svg", // Ikon untuk menu terbuka
   },
   theme: {
-    light: "./images/icons/icon-light.svg",
-    dark: "./images/icons/icon-dark.svg",
+    light: "./images/icons/icon-light.svg", // Ikon untuk mode terang
+    dark: "./images/icons/icon-dark.svg", // Ikon untuk mode gelap
   },
 };
 
+// ====================
+// FUNGSI UTAMA
+// ====================
+
+// Fungsi untuk mengatur tampilan menu mobile
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
   console.log("Toggle menu clicked");
 
-  // Toggle nav menu visibility
   menu.classList.toggle("menu-visible");
 
-  // Update icon
+  // Mengubah ikon menu sesuai status
   const isVisible = menu.classList.contains("menu-visible");
   toggleMenu.querySelector("img").src =
     ICONS.menu[isVisible ? "close" : "open"];
 };
-// Optimized theme toggle
+
+// Fungsi untuk mengatur tema gelap/terang
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
   toggleTheme.querySelector("img").src = ICONS.theme[isDark ? "light" : "dark"];
+  updateProfileImage(isDark);
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 };
 
-// Optimized scroll handler with debouncing
+// Fungsi untuk mengoptimalkan scroll dengan debouncing
 const debounce = (fn, delay) => {
   let timeoutId;
   return (...args) => {
@@ -45,27 +55,33 @@ const debounce = (fn, delay) => {
   };
 };
 
-// Typewriter effect implementation
+// ====================
+// EFEK TYPEWRITER
+// ====================
 const typewriter = (() => {
-  const texts = ["Web Developer", "UI/UX Designer", "Frontend Developer"];
+  const texts = [
+    "Full Stack Developer",
+    "Front-End Developer",
+    "Back-End Developer",
+  ];
   let count = 0;
   let index = 0;
 
   const type = () => {
     if (count === texts.length) count = 0;
-
     const currentText = texts[count];
     const letter = currentText.slice(0, ++index);
 
     if (typewriterEl) {
       typewriterEl.textContent = letter;
 
+      // Mengatur timing animasi
       if (letter.length === currentText.length) {
         count++;
         index = 0;
-        setTimeout(type, 2000);
+        setTimeout(type, 2000); // Jeda sebelum kata berikutnya
       } else {
-        setTimeout(type, 100);
+        setTimeout(type, 100); // Kecepatan mengetik
       }
     }
   };
@@ -73,23 +89,30 @@ const typewriter = (() => {
   return { start: type };
 })();
 
-// Remove duplicate event listeners and consolidate handlers
+// Menggabungkan event handler
 const handlers = {
   menu: toggleMenuHandler,
   theme: toggleThemeHandler,
 };
 
-// Event Listeners
+// Fungsi untuk mengubah gambar profil berdasarkan tema
+const updateProfileImage = (isDark) => {
+  profileImage.src = isDark ? "./images/2.png" : "./images/3.png";
+};
+
+// ====================
+// EVENT LISTENERS
+// ====================
 document.addEventListener("DOMContentLoaded", () => {
-  // Single initialization
+  // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
 
-  // Initial mobile menu state
+  // Mengatur state awal menu mobile
   if (window.innerWidth < 768) {
     menu.classList.add("translate-y-[-200%]");
   }
 
-  // Group event listeners
+  // Menambahkan event listeners
   [
     [toggleMenu, "click", handlers.menu],
     [toggleTheme, "click", handlers.theme],
@@ -97,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     element?.addEventListener(event, handler);
   });
 
-  // Handle nav links clicks
+  // Mengatur navigasi mobile
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 768) {
@@ -107,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Scroll handler
+  // Mengatur active state pada navigasi saat scroll
   window.addEventListener(
     "scroll",
     debounce(() => {
@@ -130,8 +153,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 100)
   );
-  // Start typewriter effect
+
+  // Memulai efek typewriter
   if (typewriterEl) {
     typewriter.start();
+  }
+
+  // Memeriksa dan mengatur tema yang tersimpan
+  const savedTheme = localStorage.getItem("theme");
+  if (
+    savedTheme === "dark" ||
+    (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    html.classList.add("dark");
+    toggleTheme.querySelector("img").src = ICONS.theme.light;
+    updateProfileImage(true);
+  } else {
+    html.classList.remove("dark");
+    toggleTheme.querySelector("img").src = ICONS.theme.dark;
+    updateProfileImage(false);
   }
 });
