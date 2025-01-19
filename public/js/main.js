@@ -34,12 +34,8 @@ const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
   console.log("Toggle menu clicked");
 
-  menu.classList.toggle("menu-visible");
-
-  // Mengubah ikon menu sesuai status
-  const isVisible = menu.classList.contains("menu-visible");
-  toggleMenu.querySelector("img").src =
-    ICONS.menu[isVisible ? "close" : "open"];
+  // Remove translate-y-[-200%] and add menu-visible class instead
+  menu.classList.toggle("translate-y-[-200%]");
 };
 
 // Fungsi untuk mengatur tema gelap/terang
@@ -188,4 +184,15 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProfileImage(false);
     updateLogoImage(false); // Add this line
   }
+
+  // Add resize event listener to handle screen size changes
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      menu.classList.remove("translate-y-[-200%]");
+    } else {
+      if (!menu.classList.contains("menu-visible")) {
+        menu.classList.add("translate-y-[-200%]");
+      }
+    }
+  });
 });
