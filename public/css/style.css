@@ -570,7 +570,6 @@ html {
   scroll-behavior: smooth;
   font-family: var(--font-primary);
   overflow-x: hidden;
-  /* Add this line */
 }
 
 body{
@@ -586,10 +585,6 @@ body:is(.dark *){
   background-color: rgb(34 40 49 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(238 238 238 / var(--tw-text-opacity, 1));
-}
-
-body {
-  /* Add this line */
 }
 
 .container{
@@ -708,8 +703,6 @@ body {
     background-color: transparent;
   }
 }
-
-/* Add this class for menu visibility */
 
 .menu-visible{
   --tw-translate-y: 0px;
@@ -922,10 +915,6 @@ body {
   }
 }
 
-.home-image-container {
-  /* Added margin-top for mobile */
-}
-
 /* Main Content */
 
 .main-content{
@@ -937,12 +926,6 @@ body {
     padding-top: 5rem;
   }
 }
-
-.main-content {
-  /* Added padding-top to account for fixed navbar */
-}
-
-/* Simplified class structure */
 
 .nav-base{
   position: fixed;
@@ -965,8 +948,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
-
-/* Reduce repeated properties */
 
 .interactive-element{
   transition-property: all;
@@ -1003,15 +984,11 @@ body {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
 
-/* Base interactive styles */
-
 .interactive-base{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
-
-/* Remove duplicate card styles */
 
 .card-base{
   border-radius: 0.75rem;
@@ -1986,8 +1963,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Blob Animation */
-
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -2039,8 +2014,6 @@ body {
     opacity: 1;
   }
 }
-
-/* Efek animasi untuk scroll reveal */
 
 [data-aos="fade-up"]{
   --tw-translate-y: 2.5rem;
@@ -2159,24 +2132,9 @@ body {
   animation-delay: 4s;
 }
 
-/* Remove duplicate animation definitions */
-
-@keyframes float {
-  0%,
-    100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(-20px) translateX(10px);
-  }
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
-
-/* Remove redundant delay classes */
 
 .delay-2 {
   animation-delay: 2s;

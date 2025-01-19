@@ -21,13 +21,13 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-primary);
-    @apply overflow-x-hidden; /* Add this line */
+    @apply overflow-x-hidden;
   }
 
   body {
     @apply bg-primary-white dark:bg-primary-black 
            text-primary-black dark:text-primary-white
-           overflow-x-hidden; /* Add this line */
+           overflow-x-hidden;
   }
 }
 
@@ -59,7 +59,6 @@
          backdrop-blur-sm;
   }
 
-  /* Add this class for menu visibility */
   .menu-visible {
     @apply translate-y-0;
   }
@@ -122,15 +121,14 @@
   /* Home Image Container */
   .home-image-container {
     @apply relative w-64 h-64 md:w-96 md:h-96 mx-auto 
-           mt-16 md:mt-0; /* Added margin-top for mobile */
+           mt-16 md:mt-0;
   }
 
   /* Main Content */
   .main-content {
-    @apply pt-16 md:pt-20; /* Added padding-top to account for fixed navbar */
+    @apply pt-16 md:pt-20;
   }
 
-  /* Simplified class structure */
   .nav-base {
     @apply fixed top-0 left-0 z-40 w-full transition-colors;
   }
@@ -139,7 +137,6 @@
     @apply px-6 py-2 rounded-full transition-all duration-300;
   }
 
-  /* Reduce repeated properties */
   .interactive-element {
     @apply transition-all duration-300 hover:scale-105;
   }
@@ -150,12 +147,10 @@
            transition-shadow duration-300;
   }
 
-  /* Base interactive styles */
   .interactive-base {
     @apply transition-all duration-300;
   }
 
-  /* Remove duplicate card styles */
   .card-base {
     @apply bg-white dark:bg-gray-800 
            rounded-xl shadow-lg
@@ -168,7 +163,6 @@
    4. ANIMATIONS
 ============================ */
 @layer utilities {
-  /* Blob Animation */
   @keyframes blob {
     0% {
       transform: translate(0px, 0px) scale(1);
@@ -214,7 +208,6 @@
     }
   }
 
-  /* Efek animasi untuk scroll reveal */
   [data-aos="fade-up"] {
     @apply opacity-0 translate-y-10;
   }
@@ -261,7 +254,6 @@
       @apply static flex-row p-0;
     }
   }
-
   @keyframes float-bubble {
     0% {
       transform: translateY(0) translateX(0);
@@ -288,22 +280,10 @@
     animation-delay: 4s;
   }
 
-  /* Remove duplicate animation definitions */
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0) translateX(0);
-    }
-    50% {
-      transform: translateY(-20px) translateX(10px);
-    }
-  }
-
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
-  /* Remove redundant delay classes */
   .delay-2 {
     animation-delay: 2s;
   }
