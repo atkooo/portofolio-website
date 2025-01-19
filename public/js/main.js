@@ -7,16 +7,17 @@ const toggleMenu = document.querySelector("#toggle-menu");
 const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
+let isMenuManuallyToggled = false;
 
 // Konfigurasi ikon untuk menu dan tema
 const ICONS = {
   menu: {
-    open: "./images/icons/icon-menu.svg", // Ikon untuk menu tertutup
-    close: "./images/icons/icon-close.svg", // Ikon untuk menu terbuka
+    open: "./images/icons/icon-menu.svg",
+    close: "./images/icons/icon-close.svg",
   },
   theme: {
-    light: "./images/icons/icon-light.svg", // Ikon untuk mode terang
-    dark: "./images/icons/icon-dark.svg", // Ikon untuk mode gelap
+    light: "./images/icons/icon-light.svg",
+    dark: "./images/icons/icon-dark.svg",
   },
   logo: {
     light: "./images/icon.svg",
@@ -28,9 +29,10 @@ const ICONS = {
 // FUNGSI UTAMA
 // ====================
 
-// Update toggleMenuHandler function
+// Update toggleMenuHandler
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
+  isMenuManuallyToggled = true;
   menu.classList.toggle("translate-y-0");
   menu.classList.toggle("translate-y-[-150vh]");
 
@@ -39,6 +41,7 @@ const toggleMenuHandler = (e) => {
     ? ICONS.menu.close
     : ICONS.menu.open;
 };
+
 // Fungsi untuk mengatur tema gelap/terang
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
@@ -83,9 +86,9 @@ const typewriter = (() => {
       if (letter.length === currentText.length) {
         count++;
         index = 0;
-        setTimeout(type, 2000); // Jeda sebelum kata berikutnya
+        setTimeout(type, 2000);
       } else {
-        setTimeout(type, 100); // Kecepatan mengetik
+        setTimeout(type, 100);
       }
     }
   };
@@ -113,9 +116,15 @@ const updateLogoImage = (isDark) => {
 document.addEventListener("DOMContentLoaded", () => {
   // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
+
+  // Set initial menu state based on screen size
   if (window.innerWidth < 768) {
     menu.classList.add("translate-y-[-150vh]");
+    menu.classList.remove("translate-y-0");
     toggleMenu.querySelector("img").src = ICONS.menu.open;
+  } else {
+    menu.classList.add("translate-y-0");
+    menu.classList.remove("translate-y-[-150vh]");
   }
 
   // Menambahkan event listeners
@@ -126,10 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
     element?.addEventListener(event, handler);
   });
 
-  // Mengatur navigasi mobile
+  // Update navLinks click handler
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 768) {
+        isMenuManuallyToggled = false;
         menu.classList.remove("translate-y-0");
         menu.classList.add("translate-y-[-150vh]");
         toggleMenu.querySelector("img").src = ICONS.menu.open;
@@ -186,11 +196,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add resize event listener to handle screen size changes
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 768) {
-      menu.classList.remove("translate-y-[-200%]");
-    } else {
-      if (!menu.classList.contains("menu-visible")) {
-        menu.classList.add("translate-y-[-200%]");
-      }
+      menu.classList.remove("translate-y-[-150vh]");
+      menu.classList.add("translate-y-0");
+      isMenuManuallyToggled = false;
+    } else if (!isMenuManuallyToggled) {
+      menu.classList.remove("translate-y-0");
+      menu.classList.add("translate-y-[-150vh]");
+      toggleMenu.querySelector("img").src = ICONS.menu.open;
     }
   });
 });
