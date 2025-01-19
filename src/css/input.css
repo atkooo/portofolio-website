@@ -17,7 +17,6 @@
     --transition-standard: 300ms;
     --transition-slow: 500ms;
   }
-
   html {
     scroll-behavior: smooth;
     font-family: var(--font-primary);
@@ -28,6 +27,9 @@
     @apply bg-primary-white dark:bg-primary-black 
            text-primary-black dark:text-primary-white
            overflow-x-hidden;
+  }
+  section {
+    @apply scroll-mt-5 md:scroll-mt-6;
   }
 }
 
