@@ -19,6 +19,10 @@ const ICONS = {
     light: "./images/icons/icon-light.svg", // Ikon untuk mode terang
     dark: "./images/icons/icon-dark.svg", // Ikon untuk mode gelap
   },
+  logo: {
+    light: "./images/icon.svg",
+    dark: "./images/icon-white.svg",
+  },
 };
 
 // ====================
@@ -43,6 +47,7 @@ const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
   toggleTheme.querySelector("img").src = ICONS.theme[isDark ? "light" : "dark"];
   updateProfileImage(isDark);
+  updateLogoImage(isDark); // Add this line
   localStorage.setItem("theme", isDark ? "dark" : "light");
 };
 
@@ -98,6 +103,14 @@ const handlers = {
 // Fungsi untuk mengubah gambar profil berdasarkan tema
 const updateProfileImage = (isDark) => {
   profileImage.src = isDark ? "./images/3.png" : "./images/2.png";
+};
+
+// Update logo image based on theme
+const updateLogoImage = (isDark) => {
+  const logo = document.querySelector("#nav-logo");
+  if (logo) {
+    logo.src = isDark ? ICONS.logo.dark : ICONS.logo.light;
+  }
 };
 
 // ====================
@@ -168,9 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
     html.classList.add("dark");
     toggleTheme.querySelector("img").src = ICONS.theme.light;
     updateProfileImage(true);
+    updateLogoImage(true); // Add this line
   } else {
     html.classList.remove("dark");
     toggleTheme.querySelector("img").src = ICONS.theme.dark;
     updateProfileImage(false);
+    updateLogoImage(false); // Add this line
   }
 });
