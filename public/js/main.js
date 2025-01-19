@@ -29,13 +29,18 @@ const ICONS = {
 // FUNGSI UTAMA
 // ====================
 
-// Fungsi untuk mengatur tampilan menu mobile
+// Update toggleMenuHandler function
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
-  console.log("Toggle menu clicked");
 
-  // Remove translate-y-[-200%] and add menu-visible class instead
+  const isMenuOpen = !menu.classList.contains("translate-y-[-200%]");
+  const menuIcon = toggleMenu.querySelector("img");
+
+  // Toggle menu visibility
   menu.classList.toggle("translate-y-[-200%]");
+
+  // Update menu icon
+  menuIcon.src = isMenuOpen ? ICONS.menu.open : ICONS.menu.close;
 };
 
 // Fungsi untuk mengatur tema gelap/terang
@@ -116,9 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
 
-  // Mengatur state awal menu mobile
+  // Initialize mobile menu state and icon
   if (window.innerWidth < 768) {
     menu.classList.add("translate-y-[-200%]");
+    toggleMenu.querySelector("img").src = ICONS.menu.open;
   }
 
   // Menambahkan event listeners
