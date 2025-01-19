@@ -97,7 +97,7 @@ const handlers = {
 
 // Fungsi untuk mengubah gambar profil berdasarkan tema
 const updateProfileImage = (isDark) => {
-  profileImage.src = isDark ? "./images/2.png" : "./images/3.png";
+  profileImage.src = isDark ? "./images/3.png" : "./images/2.png";
 };
 
 // ====================

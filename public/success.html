@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="5;url=index.html" />
+    <title>Message Sent Successfully</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <div
+        class="max-w-md w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center"
+        data-aos="fade-up"
+      >
+        <div class="mb-8">
+          <svg
+            class="w-16 h-16 text-green-500 mx-auto"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Message Sent Successfully!
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">
+          Thank you for reaching out. I'll get back to you soon!
+        </p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          Redirecting in <span id="countdown">5</span> seconds...
+        </p>
+        <a
+          href="index.html"
+          class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transform hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <svg
+            class="w-5 h-5 mr-2 transform rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            ></path>
+          </svg>
+          Return Home
+        </a>
+      </div>
+    </div>
+
+    <script>
+      let timeLeft = 5;
+      const countdownEl = document.getElementById("countdown");
+
+      const countdown = setInterval(() => {
+        timeLeft--;
+        countdownEl.textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          window.location.href = "index.html";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
