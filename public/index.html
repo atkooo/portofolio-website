@@ -112,7 +112,7 @@
     <!-- ==================== -->
     <!-- KONTEN UTAMA -->
     <!-- ==================== -->
-    <main class="container">
+    <main>
       <!-- ==================== -->
       <!-- SECTION: HOME -->
       <!-- ==================== -->
@@ -562,7 +562,7 @@
         id="portofolio"
         class="min-h-screen py-12 sm:py-16 md:py-20 px-4"
       >
-        <div class="container mx-auto">
+        <div class="container mx-auto max-w-6xl">
           <!-- Section Title -->
           <h2
             class="text-4xl md:text-5xl font-bold text-center mb-8"
@@ -706,7 +706,7 @@
         - Contact info
       -->
       <section id="contact" class="min-h-screen py-12 sm:py-16 md:py-20 px-4">
-        <div class="container mx-auto">
+        <div class="container mx-auto max-w-6xl">
           <!-- Section Title -->
           <h2
             class="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-16"
@@ -841,124 +841,128 @@
     <footer
       class="relative bg-white/80 dark:bg-primary-black/80 backdrop-blur-md border-t border-gray-200/20 dark:border-primary-gray/20 overflow-hidden"
     >
-      <!-- Floating Shapes -->
-      <div
-        class="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full animate-bubble blur-3xl"
-      ></div>
-      <div
-        class="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full animate-bubble-delay-2 blur-3xl"
-      ></div>
-
-      <div class="relative w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto max-w-6xl">
+        <!-- Floating Shapes -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12"
+          class="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full animate-bubble blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full animate-bubble-delay-2 blur-3xl"
+        ></div>
+
+        <div
+          class="relative w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
         >
-          <!-- Brand Section -->
-          <div class="space-y-6 text-center sm:text-left">
-            <h3
-              class="text-2xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent"
-            >
-              Okta Maulana
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Turning Ideas into Reality through Code and Creativity
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12"
+          >
+            <!-- Brand Section -->
+            <div class="space-y-6 text-center sm:text-left">
+              <h3
+                class="text-2xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent"
+              >
+                Okta Maulana
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Turning Ideas into Reality through Code and Creativity
+              </p>
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 text-gray-600 dark:text-gray-400"
+              >
+                <i class="fas fa-map-marker-alt text-primary"></i>
+                <span>Indonesia, Jakarta</span>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-6 text-center sm:text-left">
+              <h4 class="text-lg font-semibold relative inline-block">
+                Quick Links
+                <span
+                  class="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
+                ></span>
+              </h4>
+              <nav class="flex flex-col space-y-3">
+                <a href="#home" class="group w-fit mx-auto sm:mx-0">
+                  <span
+                    class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                  >
+                    Home
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                    ></span>
+                  </span>
+                </a>
+                <a href="#about" class="group w-fit mx-auto sm:mx-0">
+                  <span
+                    class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                  >
+                    About
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                    ></span>
+                  </span>
+                </a>
+                <a href="#portofolio" class="group w-fit mx-auto sm:mx-0">
+                  <span
+                    class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                  >
+                    Portfolio
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                    ></span>
+                  </span>
+                </a>
+                <a href="#contact" class="group w-fit mx-auto sm:mx-0">
+                  <span
+                    class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
+                  >
+                    Contact
+                    <span
+                      class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                    ></span>
+                  </span>
+                </a>
+              </nav>
+            </div>
+
+            <!-- Social Links -->
+            <div class="space-y-6 text-center sm:text-left">
+              <h4 class="text-lg font-semibold relative inline-block">
+                Connect
+                <span
+                  class="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
+                ></span>
+              </h4>
+              <div class="flex justify-center sm:justify-start gap-4">
+                <a href="https://github.com/atkooo" class="social-link group">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/okta-maulana/"
+                  class="social-link group"
+                >
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a
+                  href="https://instagram.com/_okta_maulana"
+                  class="social-link group"
+                >
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div
+            class="pt-8 mt-8 border-t border-gray-200/20 dark:border-primary-gray/20 text-center"
+          >
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              © 2024 <span class="text-primary">Okta Maulana</span>. All rights
+              reserved.
             </p>
-            <div
-              class="flex items-center justify-center sm:justify-start space-x-2 text-gray-600 dark:text-gray-400"
-            >
-              <i class="fas fa-map-marker-alt text-primary"></i>
-              <span>Indonesia, Jakarta</span>
-            </div>
           </div>
-
-          <!-- Quick Links -->
-          <div class="space-y-6 text-center sm:text-left">
-            <h4 class="text-lg font-semibold relative inline-block">
-              Quick Links
-              <span
-                class="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
-              ></span>
-            </h4>
-            <nav class="flex flex-col space-y-3">
-              <a href="#home" class="group w-fit mx-auto sm:mx-0">
-                <span
-                  class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
-                >
-                  Home
-                  <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                  ></span>
-                </span>
-              </a>
-              <a href="#about" class="group w-fit mx-auto sm:mx-0">
-                <span
-                  class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
-                >
-                  About
-                  <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                  ></span>
-                </span>
-              </a>
-              <a href="#portofolio" class="group w-fit mx-auto sm:mx-0">
-                <span
-                  class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
-                >
-                  Portfolio
-                  <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                  ></span>
-                </span>
-              </a>
-              <a href="#contact" class="group w-fit mx-auto sm:mx-0">
-                <span
-                  class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300"
-                >
-                  Contact
-                  <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                  ></span>
-                </span>
-              </a>
-            </nav>
-          </div>
-
-          <!-- Social Links -->
-          <div class="space-y-6 text-center sm:text-left">
-            <h4 class="text-lg font-semibold relative inline-block">
-              Connect
-              <span
-                class="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
-              ></span>
-            </h4>
-            <div class="flex justify-center sm:justify-start gap-4">
-              <a href="https://github.com/atkooo" class="social-link group">
-                <i class="fab fa-github text-xl"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/okta-maulana/"
-                class="social-link group"
-              >
-                <i class="fab fa-linkedin text-xl"></i>
-              </a>
-              <a
-                href="https://instagram.com/_okta_maulana"
-                class="social-link group"
-              >
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Copyright -->
-        <div
-          class="pt-8 mt-8 border-t border-gray-200/20 dark:border-primary-gray/20 text-center"
-        >
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            © 2024 <span class="text-primary">Okta Maulana</span>. All rights
-            reserved.
-          </p>
         </div>
       </div>
     </footer>
