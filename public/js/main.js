@@ -8,7 +8,8 @@ const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
 let isMenuManuallyToggled = false;
-
+import LogRocket from "logrocket";
+LogRocket.init("fbsx3h/okta-portfolio-website");
 // Konfigurasi ikon untuk menu dan tema
 const ICONS = {
   menu: {
