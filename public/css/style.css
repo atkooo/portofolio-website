@@ -1109,6 +1109,10 @@ section{
   z-index: 40;
 }
 
+.z-50{
+  z-index: 50;
+}
+
 .order-2{
   order: 2;
 }
@@ -1120,6 +1124,11 @@ section{
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mb-1{
@@ -1642,6 +1651,10 @@ section{
 .bg-yellow-500{
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+}
+
+.bg-black\/50{
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-gradient-to-b{
@@ -2404,6 +2417,11 @@ section{
 
 .dark\:bg-purple-400\/10:is(.dark *){
   background-color: rgb(192 132 252 / 0.1);
+}
+
+.dark\:bg-gray-700:is(.dark *){
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 }
 
 .dark\:text-gray-200:is(.dark *){

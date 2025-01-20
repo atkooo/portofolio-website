@@ -8,6 +8,10 @@ const toggleTheme = document.querySelector("#toggle-theme");
 const typewriterEl = document.querySelector("#typewriter-text");
 const navLinks = document.querySelectorAll(".nav-link");
 let isMenuManuallyToggled = false;
+const welcomeModal = document.querySelector("#welcomeModal");
+const visitorNameInput = document.querySelector("#visitorName");
+const continueBtn = document.querySelector("#continueBtn");
+const hasVisited = localStorage.getItem("hasVisited");
 
 // Konfigurasi ikon untuk menu dan tema
 const ICONS = {
@@ -40,6 +44,22 @@ const toggleMenuHandler = (e) => {
   toggleMenu.querySelector("img").src = isOpen
     ? ICONS.menu.close
     : ICONS.menu.open;
+};
+
+const handleVisitorData = () => {
+  const visitorName = visitorNameInput.value.trim() || "Anonymous";
+  localStorage.setItem("visitorName", visitorName);
+  localStorage.setItem("hasVisited", "true");
+
+  // Initialize LogRocket with visitor info
+  if (window.LogRocket) {
+    LogRocket.identify(Date.now().toString(), {
+      name: visitorName,
+      visitedAt: new Date().toISOString(),
+    });
+  }
+
+  welcomeModal.classList.add("hidden");
 };
 
 // Fungsi untuk mengatur tema gelap/terang
@@ -114,6 +134,15 @@ const updateLogoImage = (isDark) => {
 // EVENT LISTENERS
 // ====================
 document.addEventListener("DOMContentLoaded", () => {
+  // Check if first visit
+  if (!hasVisited) {
+    welcomeModal.classList.remove("hidden");
+  }
+  // Modal event listeners
+  continueBtn.addEventListener("click", handleVisitorData);
+  visitorNameInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleVisitorData();
+  });
   // Inisialisasi AOS (Animate On Scroll)
   AOS.init({ duration: 800, offset: 100, once: true });
 
