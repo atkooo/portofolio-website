@@ -1009,16 +1009,8 @@ section{
   bottom: -1rem;
 }
 
-.-bottom-48{
-  bottom: -12rem;
-}
-
 .-bottom-\[15vh\]{
   bottom: -15vh;
-}
-
-.-left-32{
-  left: -8rem;
 }
 
 .-left-4{
@@ -1033,16 +1025,8 @@ section{
   right: -1rem;
 }
 
-.-right-48{
-  right: -12rem;
-}
-
 .-right-\[10vw\]{
   right: -10vw;
-}
-
-.-top-32{
-  top: -8rem;
 }
 
 .-top-4{
@@ -1059,10 +1043,6 @@ section{
 
 .left-0{
   left: 0px;
-}
-
-.left-1\/4{
-  left: 25%;
 }
 
 .left-10{
@@ -1087,10 +1067,6 @@ section{
 
 .top-0{
   top: 0px;
-}
-
-.top-1\/2{
-  top: 50%;
 }
 
 .top-10{
@@ -1282,24 +1258,12 @@ section{
   height: 35vw;
 }
 
-.h-\[400px\]{
-  height: 400px;
-}
-
 .h-\[40vw\]{
   height: 40vw;
 }
 
 .h-\[45vw\]{
   height: 45vw;
-}
-
-.h-\[500px\]{
-  height: 500px;
-}
-
-.h-\[600px\]{
-  height: 600px;
 }
 
 .h-auto{
@@ -1370,24 +1334,12 @@ section{
   width: 35vw;
 }
 
-.w-\[400px\]{
-  width: 400px;
-}
-
 .w-\[40vw\]{
   width: 40vw;
 }
 
 .w-\[45vw\]{
   width: 45vw;
-}
-
-.w-\[500px\]{
-  width: 500px;
-}
-
-.w-\[600px\]{
-  width: 600px;
 }
 
 .w-auto{
@@ -1612,10 +1564,6 @@ section{
   background-color: rgb(96 165 250 / 0.2);
 }
 
-.bg-blue-400\/30{
-  background-color: rgb(96 165 250 / 0.3);
-}
-
 .bg-blue-500{
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
@@ -1662,10 +1610,6 @@ section{
   background-color: rgb(0 173 181 / 0.2);
 }
 
-.bg-primary\/30{
-  background-color: rgb(0 173 181 / 0.3);
-}
-
 .bg-primary\/5{
   background-color: rgb(0 173 181 / 0.05);
 }
@@ -1676,10 +1620,6 @@ section{
 
 .bg-purple-400\/20{
   background-color: rgb(192 132 252 / 0.2);
-}
-
-.bg-purple-400\/30{
-  background-color: rgb(192 132 252 / 0.3);
 }
 
 .bg-white{
@@ -2426,10 +2366,6 @@ section{
   background-color: rgb(96 165 250 / 0.1);
 }
 
-.dark\:bg-blue-400\/20:is(.dark *){
-  background-color: rgb(96 165 250 / 0.2);
-}
-
 .dark\:bg-gray-800:is(.dark *){
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
@@ -2466,16 +2402,8 @@ section{
   background-color: rgb(0 173 181 / 0.1);
 }
 
-.dark\:bg-primary\/20:is(.dark *){
-  background-color: rgb(0 173 181 / 0.2);
-}
-
 .dark\:bg-purple-400\/10:is(.dark *){
   background-color: rgb(192 132 252 / 0.1);
-}
-
-.dark\:bg-purple-400\/20:is(.dark *){
-  background-color: rgb(192 132 252 / 0.2);
 }
 
 .dark\:text-gray-200:is(.dark *){
