@@ -45,19 +45,21 @@ const toggleMenuHandler = (e) => {
     ? ICONS.menu.close
     : ICONS.menu.open;
 };
-
+const handleVisitorDataForLogRocket = (visitorName, visitedBefore) => {
+  if (!window.LogRocket) return;
+  const userId = `visitor_${Date.now()}`;
+  LogRocket.identify(userId, {
+    name: visitorName,
+    isReturningVisitor: visitedBefore,
+    visitedAt: new Date().toISOString(),
+  });
+};
 const handleVisitorData = () => {
   const visitorName = visitorNameInput.value.trim() || "Anonymous";
   localStorage.setItem("visitorName", visitorName);
   localStorage.setItem("hasVisited", "true");
 
-  // Initialize LogRocket with visitor info
-  if (window.LogRocket) {
-    LogRocket.identify(Date.now().toString(), {
-      name: visitorName,
-      visitedAt: new Date().toISOString(),
-    });
-  }
+  handleVisitorDataForLogRocket(visitorName, !!hasVisited);
 
   welcomeModal.classList.add("hidden");
 };
