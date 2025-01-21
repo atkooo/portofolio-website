@@ -4,23 +4,70 @@
     <!-- ==================== -->
     <!-- META TAGS & RESOURCES -->
     <!-- ==================== -->
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Okta Maulana | software engineer</title>
+    <meta
+      name="description"
+      content="Okta Maulana - Software Engineer Portfolio showcasing full-stack development projects and technical expertise"
+    />
+    <meta
+      name="keywords"
+      content="software engineer, web developer, full-stack developer, React, Node.js, TypeScript"
+    />
+    <meta name="author" content="Okta Maulana" />
 
-    <!-- CSS Resources -->
-    <!-- Style utama website -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Okta Maulana | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer Portfolio showcasing full-stack development projects"
+    />
+    <meta property="og:image" content="./images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Okta Maulana | Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer Portfolio showcasing full-stack development projects"
+    />
+
+    <!-- Performance & Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com;"
+    />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./css/style.css" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      as="style"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="./images/icon-white.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- Library untuk animasi scroll -->
-    <link href="./css/aos.css" rel="stylesheet" />
-    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="./css/aos.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="./images/icon-white.svg" />
-  </head>
 
+    <title>Okta Maulana | Software Engineer</title>
+  </head>
   <body>
     <!-- Welcome Modal -->
     <div
@@ -821,13 +868,13 @@
       <!-- ==================== -->
       <!-- KOMENTAR API DISQUS-->
       <!-- ==================== -->
-      <!-- <section id="comments" class="container mx-auto px-4 py-8">
+      <section id="comments" class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-2xl font-bold mb-6">Comments</h2>
           <div id="disqus_status" class="mb-4"></div>
           <div id="disqus_thread"></div>
         </div>
-      </section> -->
+      </section>
     </main>
 
     <!-- ==================== -->
@@ -991,7 +1038,7 @@
         });
       }
     </script> -->
-    <!-- <script>
+    <script>
       var disqus_config = function () {
         const hostname = window.location.hostname;
         const isDark = document.documentElement.classList.contains("dark");
@@ -1016,19 +1063,19 @@
         s.setAttribute("data-timestamp", +new Date());
         (d.head || d.body).appendChild(s);
       })();
-    </script> -->
+    </script>
 
     <!-- Comment Count Script -->
-    <!-- <script
+    <script
       id="dsq-count-scr"
       src="https://https-okta-maulana-vercel-app.disqus.com/count.js"
       async
-    ></script> -->
+    ></script>
 
-    <!-- <noscript>
+    <noscript>
       Please enable JavaScript to view the
       <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript> -->
+    </noscript>
     <script src="js/aos.js"></script>
   </body>
 </html>
