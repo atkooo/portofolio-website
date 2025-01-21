@@ -32,7 +32,20 @@ const ICONS = {
 // ====================
 // FUNGSI UTAMA
 // ====================
-
+const reloadDisqus = (isDark) => {
+  if (window.DISQUS) {
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.identifier = window.location.pathname;
+        this.page.url = window.location.href;
+        this.theme = {
+          color: isDark ? "dark" : "light",
+        };
+      },
+    });
+  }
+};
 // Update toggleMenuHandler
 const toggleMenuHandler = (e) => {
   if (e) e.preventDefault();
@@ -65,6 +78,7 @@ const handleVisitorData = () => {
 };
 
 // Fungsi untuk mengatur tema gelap/terang
+// Update the toggleThemeHandler function
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
   const switchThumb = toggleTheme.querySelector("div");
@@ -73,8 +87,10 @@ const toggleThemeHandler = () => {
   icon.src = ICONS.theme[isDark ? "light" : "dark"];
   updateLogoImage(isDark);
   localStorage.setItem("theme", isDark ? "dark" : "light");
-};
 
+  // Add this line to reload Disqus with correct theme
+  reloadDisqus(isDark);
+};
 // Fungsi untuk mengoptimalkan scroll dengan debouncing
 const debounce = (fn, delay) => {
   let timeoutId;

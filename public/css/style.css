@@ -1356,6 +1356,10 @@ section{
   max-width: 42rem;
 }
 
+.max-w-4xl{
+  max-width: 56rem;
+}
+
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -1366,10 +1370,6 @@ section{
 
 .max-w-md{
   max-width: 28rem;
-}
-
-.max-w-4xl{
-  max-width: 56rem;
 }
 
 .translate-x-0\.5{
@@ -1876,11 +1876,6 @@ section{
 .text-yellow-500{
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-}
-
-.text-red-500{
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0{

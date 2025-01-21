@@ -1002,10 +1002,12 @@
         });
       }
     </script>
+    <!-- Replace the existing Disqus script with this updated version -->
     <script>
       var disqus_config = function () {
-        // Handle both local and production URLs
         const hostname = window.location.hostname;
+        const isDark = document.documentElement.classList.contains("dark");
+
         if (hostname === "127.0.0.1" || hostname === "localhost") {
           this.page.url = "http://127.0.0.1:5500/public/index.html";
           this.page.identifier = "local-dev";
@@ -1013,6 +1015,11 @@
           this.page.url = window.location.href;
           this.page.identifier = window.location.pathname;
         }
+
+        // Add theme configuration
+        this.theme = {
+          color: isDark ? "dark" : "light",
+        };
       };
 
       (function () {
