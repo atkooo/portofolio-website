@@ -36,10 +36,6 @@
 
     <!-- Performance & Security -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com;"
-    />
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="./css/style.css" as="style" />
@@ -47,6 +43,7 @@
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
 
     <!-- Favicons -->
@@ -617,7 +614,11 @@
             id="portfolio-grid"
           >
             <!-- Portfolio Items -->
-            <div class="project-card group" data-category="web">
+            <div
+              class="project-card group"
+              data-category="web"
+              data-aos="fade-up"
+            >
               <div class="relative overflow-hidden rounded-xl">
                 <img
                   src="./images/portfolio/resq.jpg"
