@@ -193,10 +193,30 @@
   }
 
   .card-base {
-    @apply bg-white dark:bg-gray-800 
-           rounded-xl shadow-lg
+    @apply bg-white/50 dark:bg-gray-800/50
+           backdrop-blur-sm rounded-xl shadow-lg
            hover:shadow-xl
-           transition-shadow duration-300;
+           transition-all duration-300;
+  }
+
+  .btn-base {
+    @apply px-6 py-3 rounded-xl
+           transition-all duration-300
+           transform hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply btn-base
+           bg-primary text-white
+           hover:bg-primary/90;
+  }
+
+  .input-base {
+    @apply w-full px-4 py-3 
+           bg-gray-100 dark:bg-gray-700 rounded-xl
+           border-2 border-transparent
+           focus:border-primary focus:ring-2 focus:ring-primary/20
+           transition-all duration-300;
   }
 }
 
@@ -322,14 +342,12 @@
     }
   }
   @keyframes float {
-    0% {
+    0%,
+    100% {
       transform: translateY(0) scale(1);
     }
     50% {
-      transform: translateY(-10px) scale(1.05); /* Reduced Y movement */
-    }
-    100% {
-      transform: translateY(0) scale(1);
+      transform: translateY(-10px) scale(1.05);
     }
   }
 
@@ -352,7 +370,7 @@
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
   }
 
   .delay-2 {
