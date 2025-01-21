@@ -830,6 +830,9 @@
           </div>
         </div>
       </section>
+      <!-- ==================== -->
+      <!-- KOMENTAR API DISQUS-->
+      <!-- ==================== -->
       <section id="comments" class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-2xl font-bold mb-6">Comments</h2>
@@ -992,8 +995,6 @@
     ></script>
     <script>
       window.LogRocket && window.LogRocket.init("8xuybu/okta-project-website");
-
-      // Get saved visitor name if exists
       const savedVisitorName = localStorage.getItem("visitorName");
       if (savedVisitorName && window.LogRocket) {
         LogRocket.identify(Date.now().toString(), {
@@ -1002,7 +1003,6 @@
         });
       }
     </script>
-    <!-- Replace the existing Disqus script with this updated version -->
     <script>
       var disqus_config = function () {
         const hostname = window.location.hostname;
@@ -1016,7 +1016,6 @@
           this.page.identifier = window.location.pathname;
         }
 
-        // Add theme configuration
         this.theme = {
           color: isDark ? "dark" : "light",
         };

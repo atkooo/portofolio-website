@@ -78,7 +78,6 @@ const handleVisitorData = () => {
 };
 
 // Fungsi untuk mengatur tema gelap/terang
-// Update the toggleThemeHandler function
 const toggleThemeHandler = () => {
   const isDark = html.classList.toggle("dark");
   const switchThumb = toggleTheme.querySelector("div");
