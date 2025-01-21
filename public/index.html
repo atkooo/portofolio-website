@@ -830,6 +830,13 @@
           </div>
         </div>
       </section>
+      <section id="comments" class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold mb-6">Comments</h2>
+          <div id="disqus_status" class="mb-4"></div>
+          <div id="disqus_thread"></div>
+        </div>
+      </section>
     </main>
 
     <!-- ==================== -->
@@ -995,6 +1002,39 @@
         });
       }
     </script>
+    <script>
+      var disqus_config = function () {
+        // Handle both local and production URLs
+        const hostname = window.location.hostname;
+        if (hostname === "127.0.0.1" || hostname === "localhost") {
+          this.page.url = "http://127.0.0.1:5500/public/index.html";
+          this.page.identifier = "local-dev";
+        } else {
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.pathname;
+        }
+      };
+
+      (function () {
+        const d = document;
+        const s = d.createElement("script");
+        s.src = "https://https-okta-maulana-vercel-app.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+
+    <!-- Comment Count Script -->
+    <script
+      id="dsq-count-scr"
+      src="https://https-okta-maulana-vercel-app.disqus.com/count.js"
+      async
+    ></script>
+
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
     <script src="js/aos.js"></script>
   </body>
 </html>
