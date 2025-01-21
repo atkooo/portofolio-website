@@ -44,6 +44,36 @@
          bg-white/90 dark:bg-primary-gray/90
          backdrop-blur-sm;
   }
+  .tech-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium
+           flex items-center gap-2
+           cursor-default
+           transition-all duration-300
+           hover:shadow-md;
+    animation: float 3s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .tech-badge-react {
+    @apply bg-blue-100 dark:bg-blue-900/30 
+           text-blue-600 dark:text-blue-400
+           hover:bg-blue-200 dark:hover:bg-blue-800/40;
+    animation-delay: 0s;
+  }
+
+  .tech-badge-node {
+    @apply bg-green-100 dark:bg-green-900/30
+           text-green-600 dark:text-green-400
+           hover:bg-green-200 dark:hover:bg-green-800/40;
+    animation-delay: 0.2s;
+  }
+
+  .tech-badge-ts {
+    @apply bg-purple-100 dark:bg-purple-900/30
+           text-purple-600 dark:text-purple-400
+           hover:bg-purple-200 dark:hover:bg-purple-800/40;
+    animation-delay: 0.4s;
+  }
 
   .social-links {
     @apply flex items-center gap-4;
@@ -63,7 +93,20 @@
          dark:border-primary-gray/50
          dark:hover:border-primary;
   }
+  .skill-progress {
+    @apply relative mb-6;
+  }
 
+  .progress-bar {
+    @apply h-2 rounded-full bg-gradient-to-r from-primary to-blue-500
+         dark:from-primary/80 dark:to-blue-500/80
+         transition-all duration-1000 ease-out;
+  }
+
+  .skill-percentage {
+    @apply absolute -right-1 top-0 -translate-y-6
+         text-sm font-medium text-primary dark:text-primary/90;
+  }
   .nav-link-active {
     @apply text-primary dark:text-primary
          relative
@@ -71,6 +114,16 @@
          after:w-full after:h-0.5
          after:bg-primary
          after:-bottom-1 after:left-0;
+  }
+
+  .experience-item {
+    @apply transition-all duration-300
+           hover:translate-x-2;
+  }
+
+  .progress-bar {
+    @apply transition-all duration-1000 ease-out
+           w-0;
   }
 
   .nav-menus {
@@ -273,7 +326,7 @@
       transform: translateY(0) scale(1);
     }
     50% {
-      transform: translateY(-20px) scale(1.05);
+      transform: translateY(-10px) scale(1.05); /* Reduced Y movement */
     }
     100% {
       transform: translateY(0) scale(1);
@@ -307,5 +360,26 @@
   }
   .delay-4 {
     animation-delay: 4s;
+  }
+
+  /* Timeline animations */
+  .timeline-item {
+    @apply transition-all duration-300 hover:translate-x-2;
+  }
+
+  .timeline-dot {
+    @apply transition-all duration-300;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    @apply scale-125 rotate-12;
+  }
+  .tech-badge {
+    animation: float 3s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .tech-badge:hover {
+    animation-play-state: running;
   }
 }

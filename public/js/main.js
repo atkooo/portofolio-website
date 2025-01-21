@@ -98,7 +98,65 @@ const debounce = (fn, delay) => {
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 };
+function initSkillBars() {
+  const skills = document.querySelectorAll(".skill-progress");
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const progress = entry.target.querySelector(".progress-bar");
+          const counter = entry.target.querySelector(".skill-percentage");
+          const target = parseInt(progress.getAttribute("data-value"));
+
+          let count = 0;
+          const duration = 1000; // 1 second
+          const increment = target / (duration / 16); // 60 FPS
+
+          const animate = () => {
+            if (count < target) {
+              count += increment;
+              const current = Math.min(Math.round(count), target);
+              counter.textContent = `${current}%`;
+              progress.style.width = `${current}%`;
+              requestAnimationFrame(animate);
+            }
+          };
+
+          animate();
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  skills.forEach((skill) => observer.observe(skill));
+}
+
+function initFloatingBadges() {
+  const badges = document.querySelectorAll(".tech-badge");
+
+  badges.forEach((badge, index) => {
+    // Add staggered animation delays
+    badge.style.animationDelay = `${index * 0.2}s`;
+
+    // Add intersection observer for animation on view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            badge.style.animationPlayState = "running";
+          } else {
+            badge.style.animationPlayState = "paused";
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(badge);
+  });
+}
 // ====================
 // EFEK TYPEWRITER
 // ====================
@@ -151,6 +209,9 @@ const updateLogoImage = (isDark) => {
 // EVENT LISTENERS
 // ====================
 document.addEventListener("DOMContentLoaded", () => {
+  initSkillBars();
+  initFloatingBadges(); // Make sure this is after DOM elements are loaded
+
   // Check if first visit
   if (!hasVisited) {
     welcomeModal.classList.remove("hidden");
