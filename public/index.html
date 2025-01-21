@@ -554,19 +554,23 @@
 
           <!-- Filter Buttons -->
           <div
-            class="flex flex-wrap justify-center gap-4 mb-12"
+            class="flex flex-wrap justify-center gap-4 mb-8"
             data-aos="fade-up"
+            data-aos-delay="100"
           >
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Web Apps</button>
-            <button class="filter-btn">UI/UX</button>
-            <button class="filter-btn">Mobile Apps</button>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="design">Design</button>
           </div>
-
           <!-- Projects Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
-            <div class="project-card group" data-aos="fade-up">
+          <!-- Portfolio Grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="portfolio-grid"
+          >
+            <!-- Portfolio Items -->
+            <div class="project-card group" data-category="web">
               <div class="relative overflow-hidden rounded-xl">
                 <img
                   src="./images/portfolio/resq.jpg"
@@ -602,7 +606,11 @@
             </div>
 
             <!-- Project Card 2 -->
-            <div class="project-card group" data-aos="fade-up">
+            <div
+              class="project-card group"
+              data-aos="fade-up"
+              data-category="mobile"
+            >
               <div class="relative overflow-hidden rounded-xl">
                 <img
                   src="./images/portfolio/simoga.jpg"
@@ -638,7 +646,11 @@
               </div>
             </div>
             <!-- Project Card 3 -->
-            <div class="project-card group" data-aos="fade-up">
+            <div
+              class="project-card group"
+              data-aos="fade-up"
+              data-category="mobile"
+            >
               <div class="relative overflow-hidden rounded-xl">
                 <img
                   src="./images/portfolio/klinik.png"

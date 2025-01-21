@@ -98,6 +98,40 @@ const debounce = (fn, delay) => {
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 };
+
+function initPortfolioFilter() {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const portfolioItems = document.querySelectorAll("#portfolio-grid > div");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      // Add active class to clicked button
+      btn.classList.add("active");
+
+      const filterValue = btn.getAttribute("data-filter");
+
+      portfolioItems.forEach((item) => {
+        if (
+          filterValue === "all" ||
+          item.getAttribute("data-category") === filterValue
+        ) {
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
+          item.style.display = "block";
+        } else {
+          item.style.opacity = "0";
+          item.style.transform = "scale(0.8)";
+          setTimeout(() => {
+            item.style.display = "none";
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
 function initSkillBars() {
   const skills = document.querySelectorAll(".skill-progress");
 
@@ -210,8 +244,8 @@ const updateLogoImage = (isDark) => {
 // ====================
 document.addEventListener("DOMContentLoaded", () => {
   initSkillBars();
-  initFloatingBadges(); // Make sure this is after DOM elements are loaded
-
+  initFloatingBadges();
+  initPortfolioFilter();
   // Check if first visit
   if (!hasVisited) {
     welcomeModal.classList.remove("hidden");
