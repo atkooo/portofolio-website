@@ -9,7 +9,7 @@
       </a>
 
       <!-- Desktop Minimal Nav Links -->
-      <nav class="hidden md:flex items-center gap-6 text-xs sm:text-sm font-semibold">
+      <nav class="hidden md:flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm font-semibold">
         <a
           v-for="item in navItems"
           :key="item.href"

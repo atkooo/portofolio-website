@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="py-20 lg:py-28 relative bg-slate-100/50 dark:bg-transparent">
+  <section id="experience" class="py-14 lg:py-20 relative bg-slate-100/50 dark:bg-transparent">
     <div class="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->

@@ -1,5 +1,5 @@
 <template>
-  <section id="portofolio" class="py-20 lg:py-28 relative">
+  <section id="portofolio" class="py-14 lg:py-20 relative">
     <div class="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
