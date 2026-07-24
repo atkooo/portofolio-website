@@ -1,8 +1,0 @@
-/* ============================
-   ROOT VARIABLES & TOKENS
-============================ */
-:root {
-  --font-primary: "Poppins", sans-serif;
-  --transition-standard: 300ms;
-  --transition-slow: 500ms;
-}

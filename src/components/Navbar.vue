@@ -4,7 +4,7 @@
       <a href="#" class="relative z-30 hover:opacity-80 transition-opacity duration-300">
         <img
           id="nav-logo"
-          :src="isDark ? ICONS.logo.dark : ICONS.logo.light"
+          :src="isDark ? ICONS?.logo?.dark : ICONS?.logo?.light"
           alt="Logo"
           class="h-10 w-auto"
         />
@@ -38,12 +38,8 @@
           aria-label="Toggle Theme"
           class="relative z-30 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         >
-          <div class="w-6 h-6 flex items-center justify-center">
-            <img
-              :src="isDark ? ICONS.theme.light : ICONS.theme.dark"
-              alt="Theme toggle"
-              class="w-5 h-5"
-            />
+          <div class="w-6 h-6 flex items-center justify-center text-gray-800 dark:text-yellow-400">
+            <i :class="isDark ? 'fas fa-sun text-lg' : 'fas fa-moon text-lg'"></i>
           </div>
         </button>
 
@@ -52,13 +48,9 @@
           id="toggle-menu"
           @click="toggleMobileMenu"
           aria-label="Toggle Mobile Menu"
-          class="md:hidden relative z-30 p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+          class="md:hidden relative z-30 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white"
         >
-          <img
-            :src="isMobileOpen ? ICONS.menu.close : ICONS.menu.open"
-            alt="Menu toggle"
-            class="w-6 h-6"
-          />
+          <i :class="isMobileOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl'"></i>
         </button>
       </div>
     </div>

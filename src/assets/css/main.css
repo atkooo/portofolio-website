@@ -1,18 +1,115 @@
-/* ============================
-   MASTER VUE CSS STYLESHEET
-============================ */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-
-@import "../../css/base/variables.css";
-@import "../../css/base/base.css";
-@import "../../css/components/navbar.css";
-@import "../../css/components/badges.css";
-@import "../../css/components/buttons.css";
-@import "../../css/components/cards.css";
-@import "../../css/components/timeline.css";
-@import "../../css/utilities/animations.css";
+/* ============================================================
+   OKTA MAULANA PORTFOLIO - DESIGN SYSTEM & MAIN STYLESHEET
+============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ROOT TOKENS & BASE STYLES */
+@layer base {
+  :root {
+    --font-primary: "Poppins", sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-primary);
+    @apply overflow-x-hidden;
+  }
+  body {
+    @apply bg-primary-white dark:bg-primary-black text-primary-black dark:text-primary-white overflow-x-hidden;
+  }
+  section {
+    @apply scroll-mt-5 md:scroll-mt-6;
+  }
+}
+
+/* COMPONENT UTILITIES */
+@layer components {
+  .nav {
+    @apply fixed top-0 left-0 z-40 w-full h-16 md:h-20 bg-white/90 dark:bg-primary-gray/90 backdrop-blur-sm transition-colors duration-300;
+  }
+  .nav-menus {
+    @apply fixed md:static top-[64px] left-0 z-20 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 py-8 md:p-0 w-full md:w-auto bg-white/95 dark:bg-primary-gray/95 md:bg-transparent md:dark:bg-transparent text-gray-700 dark:text-gray-200 transition-transform duration-300 ease-in-out backdrop-blur-md md:backdrop-blur-none;
+  }
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors duration-300;
+  }
+  .nav-link-active {
+    @apply text-primary dark:text-primary font-semibold;
+  }
+  .social-link {
+    @apply flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 dark:bg-primary-gray/30 text-primary-black dark:text-primary-white hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white hover:scale-110 hover:rotate-6 transform-gpu transition-all duration-300 border border-gray-200/50 dark:border-primary-gray/50;
+  }
+  .tech-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 cursor-default transition-all duration-300 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white hover:shadow-md;
+  }
+  .tech-tag {
+    @apply px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl bg-primary text-white hover:bg-primary/90 transform hover:-translate-y-0.5 transition-all duration-300 font-semibold shadow-md hover:shadow-lg;
+  }
+  .filter-btn {
+    @apply px-5 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 text-sm font-semibold focus:outline-none;
+  }
+  .filter-btn.active {
+    @apply bg-primary text-white shadow-md;
+  }
+  .project-btn {
+    @apply px-4 py-2 bg-white text-primary rounded-full flex items-center gap-2 hover:bg-gray-100 transition-colors duration-300 text-sm font-medium;
+  }
+  .input-base {
+    @apply w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl border-2 border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none;
+  }
+  .card-base {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700/50 hover:shadow-xl transition-all duration-300;
+  }
+  .project-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  .contact-card {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-md border border-gray-100 dark:border-gray-700/50 transition-all duration-300 hover:shadow-lg;
+  }
+  .experience-timeline {
+    @apply relative space-y-8;
+  }
+  .timeline-connector {
+    @apply absolute left-6 md:left-8 top-0 h-full w-0.5 bg-gradient-to-b from-primary via-blue-400 to-blue-500/50;
+  }
+  .experience-content {
+    @apply ml-12 md:ml-16 space-y-3 bg-white/70 dark:bg-gray-800/70 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 w-full;
+  }
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full bg-primary ring-4 ring-white/50 dark:ring-gray-800/50 transition-all duration-300 group-hover:scale-125;
+  }
+  .timeline-dot-active {
+    @apply bg-green-500 ring-4 ring-green-200 dark:ring-green-900/50 animate-pulse;
+  }
+}
+
+/* ANIMATION UTILITIES */
+@layer utilities {
+  @keyframes blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.03); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-blob { animation: blob 7s infinite; }
+  .animate-float { animation: float 3.5s ease-in-out infinite; }
+  .bubble-effect { filter: blur(40px); }
+  .typewriter .cursor { animation: blink 1s infinite; }
+  .overlay {
+    @apply absolute inset-0 bg-primary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
+}
