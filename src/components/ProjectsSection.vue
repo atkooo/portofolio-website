@@ -1,71 +1,81 @@
 <template>
-  <section id="portofolio" class="py-24 lg:py-32 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="portofolio" class="py-20 lg:py-28 relative">
+    <div class="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16" data-aos="fade-up">
-        <div class="eyebrow-pill">
-          <i class="fas fa-briefcase text-xs"></i> FEATURED WORK
-        </div>
+      <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Featured <span class="text-[#00ADB5]">Engineering Systems.</span>
+          Selected <span class="text-[#00ADB5]">Projects</span>
         </h2>
-        <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          Curated selection of enterprise web platforms, mobile solutions, and award-winning software architectures.
+        <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+          A collection of web applications, systems, and projects I have worked on.
         </p>
       </div>
 
-      <!-- Asymmetrical Bento Project Grid -->
-      <div id="portfolio-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      <!-- 2-Column Clean Project Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         <div
-          v-for="(project, index) in projects"
+          v-for="project in projects"
           :key="project.id"
-          class="double-bezel-outer group"
-          :class="index % 3 === 0 ? 'lg:col-span-8' : 'lg:col-span-4'"
+          class="rounded-2xl bg-white dark:bg-[#12141C] border border-slate-200 dark:border-white/10 overflow-hidden group hover:border-[#00ADB5]/50 transition-all duration-300 flex flex-col justify-between shadow-sm"
           data-aos="fade-up"
         >
-          <div class="double-bezel-inner flex flex-col justify-between p-0 overflow-hidden">
-            
-            <!-- Project Image Container with Overlay -->
-            <div class="relative overflow-hidden aspect-[16/9] bg-slate-900 border-b border-slate-200 dark:border-white/5">
-              <img
-                :src="project.image"
-                :alt="project.title"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
-                @error="handleImgError"
-              />
-              <div class="overlay">
-                <a :href="project.github" target="_blank" class="cta-button-secondary py-2 px-4 text-xs" aria-label="GitHub">
-                  <i class="fab fa-github"></i> Repository
-                </a>
-                <a :href="project.demo" target="_blank" class="cta-button-nested py-2 px-4 text-xs" aria-label="Live Demo">
-                  <span>System Architecture</span>
-                  <div class="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center">
-                    <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                  </div>
-                </a>
-              </div>
+          <!-- Project Image -->
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900 border-b border-slate-200 dark:border-white/10">
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              @error="handleImgError"
+            />
+            <div class="overlay">
+              <a :href="project.github" target="_blank" class="cta-button-secondary py-2 px-4 text-xs font-semibold" aria-label="GitHub">
+                <i class="fab fa-github"></i> Repository
+              </a>
+              <a :href="project.demo" target="_blank" class="cta-button-nested py-2 px-4 text-xs font-semibold" aria-label="Live Demo">
+                <span>View Project</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
             </div>
-
-            <!-- Project Details -->
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span v-for="tag in project.tags" :key="tag" class="tech-tag font-mono">
-                    {{ tag }}
-                  </span>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#00ADB5] transition-colors">
-                  {{ project.title }}
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-gray-400 leading-relaxed">
-                  {{ project.description }}
-                </p>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Project Content -->
+          <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <!-- Tech Tags Row -->
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span v-for="tag in project.tags" :key="tag" class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 font-mono text-[10px] font-semibold text-slate-700 dark:text-gray-300">
+                  {{ tag }}
+                </span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#00ADB5] transition-colors">
+                {{ project.title }}
+              </h3>
+              
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-6">
+                {{ project.description }}
+              </p>
+            </div>
+
+            <!-- Action Button -->
+            <div>
+              <a :href="project.demo" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-[#00ADB5] hover:underline">
+                <span>View Details</span>
+                <i class="fas fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="text-center mt-12" data-aos="fade-up">
+        <a href="https://github.com/atkooo" target="_blank" class="cta-button-secondary py-3 px-6 text-xs sm:text-sm font-semibold">
+          <i class="fab fa-github"></i>
+          <span>View All Projects on GitHub</span>
+        </a>
       </div>
 
     </div>
@@ -77,8 +87,8 @@ const projects = [
   {
     id: 1,
     title: "Anzon Learning System (ALS)",
-    description: "Enterprise e-learning portal engineered for PT Anzon Autoplaza to digitize employee onboarding, sales training, and technician certification progress.",
-    tags: ["Enterprise Web", "Vue.js", "PHP", "MySQL Architecture"],
+    description: "Internal e-learning platform built for PT Anzon Autoplaza to assist employee onboarding, sales training, and technician certifications.",
+    tags: ["Web Portal", "Vue.js", "PHP", "MySQL"],
     image: "https://placehold.co/800x450/0F172A/00ADB5?text=Anzon+Learning+System+(ALS)",
     github: "https://github.com/atkooo",
     demo: "#",
@@ -86,33 +96,33 @@ const projects = [
   {
     id: 2,
     title: "Lintara Digital ERP & POS Suite",
-    description: "Scalable Enterprise Resource Planning & Point of Sales platform designed to streamline daily SME inventory and transaction processing.",
-    tags: ["ERP/POS System", "Fullstack", "SQL Engine", "REST API"],
+    description: "ERP and Point of Sale web application designed to help manage daily business inventory, sales transactions, and reporting.",
+    tags: ["ERP & POS", "Fullstack", "SQL Database"],
     image: "https://placehold.co/800x450/0F172A/00ADB5?text=Lintara+Digital+ERP+%26+POS",
     github: "https://github.com/atkooo",
     demo: "#",
   },
   {
     id: 3,
-    title: "SIMOGA - Computer Vision Toddler Health App",
-    description: "Mobile nutrition monitoring app powered by TensorFlow food recognition API and Flutter, built for toddler health tracking.",
-    tags: ["Flutter", "TensorFlow AI", "Mobile App", "Dart"],
-    image: "https://placehold.co/800x450/0F172A/00ADB5?text=SIMOGA+TensorFlow+AI",
+    title: "SIMOGA - Toddler Health App",
+    description: "Mobile application for toddler nutrition tracking featuring computer vision food recognition via TensorFlow and Flutter.",
+    tags: ["Flutter", "TensorFlow AI", "Dart"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=SIMOGA+Toddler+Health+App",
     github: "https://github.com/atkooo",
     demo: "#",
   },
   {
     id: 4,
-    title: "E-Government Suite (KMIPN VI National Champion)",
-    description: "Award-winning e-government application winning 1st Place National Champion at KMIPN VI Jakarta against 15+ top tech teams.",
-    tags: ["Flutter", "E-Government", "National Champion", "REST API"],
-    image: "https://placehold.co/800x450/0F172A/00ADB5?text=1st+Place+KMIPN+VI+E-Gov",
+    title: "RIMS - Rental Inventory Management System",
+    description: "Web application engineered for inventory tracking, rental booking schedules, item stock availability, and transaction records.",
+    tags: ["Inventory System", "Rental App", "Vue.js", "PHP & SQL"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=RIMS+Rental+Inventory+System",
     github: "https://github.com/atkooo",
     demo: "#",
   },
 ];
 
 const handleImgError = (e) => {
-  e.target.src = "https://placehold.co/800x450/0F172A/00ADB5?text=Okta+Maulana+System";
+  e.target.src = "https://placehold.co/800x450/0F172A/00ADB5?text=Okta+Maulana+Project";
 };
 </script>

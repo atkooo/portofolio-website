@@ -13,7 +13,7 @@
         </a>
       </div>
       <p class="font-mono text-xs text-slate-500 dark:text-gray-500">
-        © 2026 <span class="text-[#00ADB5] font-semibold">Okta Maulana</span>. Designed with Vue 3 & Double-Bezel Architecture.
+        © 2026 <span class="text-[#00ADB5] font-semibold">Okta Maulana</span>. Fullstack Engineer & IT Specialist.
       </p>
     </div>
   </footer>
