@@ -1,63 +1,86 @@
 <template>
-  <section id="portofolio" class="py-20">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-primary">Portfolio</span></h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          A showcase of my recent projects and applications.
+  <section id="portofolio" class="py-24 lg:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16" data-aos="fade-up">
+        <div class="eyebrow-pill">
+          <i class="fas fa-briefcase text-xs"></i> SELECTED WORK
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+          Featured <span class="text-[#00ADB5]">Engineering.</span>
+        </h2>
+        <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
+          Production applications, dashboards, and digital experiences crafted with technical precision.
         </p>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-12" data-aos="fade-up">
+      <!-- Filter Controls (Pill Architecture) -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up">
         <button
           v-for="cat in categories"
           :key="cat.value"
           @click="activeCategory = cat.value"
-          class="filter-btn"
+          class="filter-pill"
           :class="{ active: activeCategory === cat.value }"
         >
           {{ cat.label }}
         </button>
       </div>
 
-      <!-- Portfolio Grid -->
-      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Asymmetrical Bento Project Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         <div
-          v-for="project in filteredProjects"
+          v-for="(project, index) in filteredProjects"
           :key="project.id"
-          class="project-card group"
+          class="double-bezel-outer group"
+          :class="index % 3 === 0 ? 'lg:col-span-8' : 'lg:col-span-4'"
           data-aos="fade-up"
         >
-          <div class="relative overflow-hidden aspect-video bg-gray-100 dark:bg-gray-700">
-            <img
-              :src="project.image"
-              :alt="project.title"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              @error="handleImgError"
-            />
-            <div class="overlay">
-              <a :href="project.github" target="_blank" class="project-btn">
-                <i class="fab fa-github"></i> Code
-              </a>
-              <a :href="project.demo" target="_blank" class="project-btn">
-                <i class="fas fa-external-link-alt"></i> Demo
-              </a>
+          <div class="double-bezel-inner flex flex-col justify-between p-0 overflow-hidden">
+            
+            <!-- Project Image Container with Overlay -->
+            <div class="relative overflow-hidden aspect-[16/9] bg-slate-900 border-b border-slate-200 dark:border-white/5">
+              <img
+                :src="project.image"
+                :alt="project.title"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                @error="handleImgError"
+              />
+              <div class="overlay">
+                <a :href="project.github" target="_blank" class="cta-button-secondary py-2 px-4 text-xs" aria-label="GitHub">
+                  <i class="fab fa-github"></i> Code
+                </a>
+                <a :href="project.demo" target="_blank" class="cta-button-nested py-2 px-4 text-xs" aria-label="Live Demo">
+                  <span>Demo</span>
+                  <div class="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center">
+                    <i class="fas fa-[#00ADB5] text-[10px]"></i>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="p-6">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span v-for="tag in project.tags" :key="tag" class="tech-tag">
-                {{ tag }}
-              </span>
+
+            <!-- Project Details -->
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span v-for="tag in project.tags" :key="tag" class="tech-tag font-mono">
+                    {{ tag }}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#00ADB5] transition-colors">
+                  {{ project.title }}
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-gray-400 leading-relaxed">
+                  {{ project.description }}
+                </p>
+              </div>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ project.title }}</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              {{ project.description }}
-            </p>
+
           </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>
@@ -113,6 +136,6 @@ const filteredProjects = computed(() => {
 });
 
 const handleImgError = (e) => {
-  e.target.src = "https://placehold.co/600x400/00ADB5/FFFFFF?text=Project+Preview";
+  e.target.src = "https://placehold.co/800x450/0F172A/00ADB5?text=Project+Architecture";
 };
 </script>

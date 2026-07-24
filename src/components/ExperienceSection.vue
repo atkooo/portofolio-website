@@ -1,39 +1,55 @@
 <template>
-  <section id="experience" class="py-20">
-    <div class="container mx-auto px-4">
+  <section id="experience" class="py-24 lg:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Work <span class="text-primary">Experience</span></h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          My professional journey and career milestones.
+        <div class="eyebrow-pill">
+          <i class="fas fa-history text-xs"></i> CAREER PATH
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+          Professional <span class="text-[#00ADB5]">Experience.</span>
+        </h2>
+        <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
+          My engineering journey, roles, and software development milestones.
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto experience-timeline">
-        <div class="timeline-connector"></div>
+      <div class="max-w-3xl mx-auto relative">
+        <!-- Connecting Solid Line -->
+        <div class="absolute left-4 sm:left-6 top-3 h-[calc(100%-24px)] w-0.5 bg-[#00ADB5]/30"></div>
 
         <div
           v-for="(exp, index) in experiences"
           :key="index"
-          class="experience-item flex items-start group mb-12"
+          class="relative pl-12 sm:pl-16 mb-8 last:mb-0 group"
           data-aos="fade-up"
         >
-          <div class="relative z-10 flex-shrink-0">
-            <div class="timeline-dot" :class="{ 'timeline-dot-active': exp.current }"></div>
-          </div>
-          <div class="experience-content">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ exp.title }}</h3>
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-primary/10 text-primary">
-                {{ exp.period }}
-              </span>
+          <!-- Timeline Node Dot -->
+          <div class="absolute left-2.5 sm:left-4 top-7 -translate-x-1/2 w-4 h-4 rounded-full bg-[#00ADB5] ring-4 ring-slate-100 dark:ring-[#08090D] shadow-[0_0_10px_#00ADB5] group-hover:scale-125 transition-transform"></div>
+
+          <!-- Double-Bezel Milestone Card -->
+          <div class="double-bezel-outer">
+            <div class="double-bezel-inner">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-[#00ADB5] transition-colors">
+                  {{ exp.title }}
+                </h3>
+                <span class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-[#00ADB5]/15 border border-[#00ADB5]/30 text-[#00ADB5] w-fit">
+                  {{ exp.period }}
+                </span>
+              </div>
+              <h4 class="text-sm font-semibold text-[#00ADB5] mb-3 flex items-center gap-2 font-mono">
+                <i class="fas fa-building text-xs"></i> {{ exp.company }}
+              </h4>
+              <p class="text-sm text-slate-600 dark:text-gray-400 leading-relaxed">
+                {{ exp.description }}
+              </p>
             </div>
-            <h4 class="text-sm font-medium text-primary mb-3">{{ exp.company }}</h4>
-            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              {{ exp.description }}
-            </p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>
