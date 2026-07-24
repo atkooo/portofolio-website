@@ -5,33 +5,20 @@
       <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16" data-aos="fade-up">
         <div class="eyebrow-pill">
-          <i class="fas fa-briefcase text-xs"></i> SELECTED WORK
+          <i class="fas fa-briefcase text-xs"></i> FEATURED WORK
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Featured <span class="text-[#00ADB5]">Engineering.</span>
+          Featured <span class="text-[#00ADB5]">Engineering Systems.</span>
         </h2>
         <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          Production applications, dashboards, and digital experiences crafted with technical precision.
+          Curated selection of enterprise web platforms, mobile solutions, and award-winning software architectures.
         </p>
-      </div>
-
-      <!-- Filter Controls (Pill Architecture) -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up">
-        <button
-          v-for="cat in categories"
-          :key="cat.value"
-          @click="activeCategory = cat.value"
-          class="filter-pill"
-          :class="{ active: activeCategory === cat.value }"
-        >
-          {{ cat.label }}
-        </button>
       </div>
 
       <!-- Asymmetrical Bento Project Grid -->
       <div id="portfolio-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         <div
-          v-for="(project, index) in filteredProjects"
+          v-for="(project, index) in projects"
           :key="project.id"
           class="double-bezel-outer group"
           :class="index % 3 === 0 ? 'lg:col-span-8' : 'lg:col-span-4'"
@@ -49,12 +36,12 @@
               />
               <div class="overlay">
                 <a :href="project.github" target="_blank" class="cta-button-secondary py-2 px-4 text-xs" aria-label="GitHub">
-                  <i class="fab fa-github"></i> Code
+                  <i class="fab fa-github"></i> Repository
                 </a>
                 <a :href="project.demo" target="_blank" class="cta-button-nested py-2 px-4 text-xs" aria-label="Live Demo">
-                  <span>Demo</span>
+                  <span>System Architecture</span>
                   <div class="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center">
-                    <i class="fas fa-[#00ADB5] text-[10px]"></i>
+                    <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                   </div>
                 </a>
               </div>
@@ -86,56 +73,46 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-
-const activeCategory = ref("all");
-
-const categories = [
-  { label: "All Projects", value: "all" },
-  { label: "Web App", value: "web" },
-  { label: "Mobile App", value: "mobile" },
-  { label: "UI/UX", value: "uiux" },
-];
-
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
-    category: "web",
-    description: "Modern analytics dashboard for online merchants with real-time charts and order management.",
-    tags: ["Vue 3", "Tailwind", "Chart.js"],
-    image: "/images/project1.jpg",
+    title: "Anzon Learning System (ALS)",
+    description: "Enterprise e-learning portal engineered for PT Anzon Autoplaza to digitize employee onboarding, sales training, and technician certification progress.",
+    tags: ["Enterprise Web", "Vue.js", "PHP", "MySQL Architecture"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=Anzon+Learning+System+(ALS)",
     github: "https://github.com/atkooo",
     demo: "#",
   },
   {
     id: 2,
-    title: "Smart Task Management",
-    category: "web",
-    description: "Collaborative task tracking web app featuring drag-and-drop kanban boards.",
-    tags: ["TypeScript", "Vue 3", "Node.js"],
-    image: "/images/project2.jpg",
+    title: "Lintara Digital ERP & POS Suite",
+    description: "Scalable Enterprise Resource Planning & Point of Sales platform designed to streamline daily SME inventory and transaction processing.",
+    tags: ["ERP/POS System", "Fullstack", "SQL Engine", "REST API"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=Lintara+Digital+ERP+%26+POS",
     github: "https://github.com/atkooo",
     demo: "#",
   },
   {
     id: 3,
-    title: "Fitness Companion App",
-    category: "mobile",
-    description: "Mobile workout planner and nutrition tracking application.",
-    tags: ["Flutter", "Firebase"],
-    image: "/images/project3.jpg",
+    title: "SIMOGA - Computer Vision Balita Health App",
+    description: "Mobile nutrition monitoring app powered by TensorFlow food recognition API and Flutter, built for toddler health tracking.",
+    tags: ["Flutter", "TensorFlow AI", "Mobile App", "Dart"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=SIMOGA+TensorFlow+AI",
+    github: "https://github.com/atkooo",
+    demo: "#",
+  },
+  {
+    id: 4,
+    title: "E-Government Suite (KMIPN VI National Champion)",
+    description: "Award-winning e-government application winning 1st Place National Champion at KMIPN VI Jakarta against 15+ top tech teams.",
+    tags: ["Flutter", "E-Government", "National Champion", "REST API"],
+    image: "https://placehold.co/800x450/0F172A/00ADB5?text=1st+Place+KMIPN+VI+E-Gov",
     github: "https://github.com/atkooo",
     demo: "#",
   },
 ];
 
-const filteredProjects = computed(() => {
-  if (activeCategory.value === "all") return projects;
-  return projects.filter((p) => p.category === activeCategory.value);
-});
-
 const handleImgError = (e) => {
-  e.target.src = "https://placehold.co/800x450/0F172A/00ADB5?text=Project+Architecture";
+  e.target.src = "https://placehold.co/800x450/0F172A/00ADB5?text=Okta+Maulana+System";
 };
 </script>

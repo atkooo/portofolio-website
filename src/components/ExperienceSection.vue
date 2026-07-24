@@ -8,10 +8,10 @@
           <i class="fas fa-history text-xs"></i> CAREER PATH
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Professional <span class="text-[#00ADB5]">Experience.</span>
+          Industry <span class="text-[#00ADB5]">Milestones.</span>
         </h2>
         <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          My engineering journey, roles, and software development milestones.
+          Key roles in software engineering, enterprise IT infrastructure, and system design.
         </p>
       </div>
 
@@ -40,11 +40,16 @@
                 </span>
               </div>
               <h4 class="text-sm font-semibold text-[#00ADB5] mb-3 flex items-center gap-2 font-mono">
-                <i class="fas fa-building text-xs"></i> {{ exp.company }}
+                <i class="fas fa-building text-xs"></i> {{ exp.company }} <span class="text-slate-500 font-normal">| {{ exp.location }}</span>
               </h4>
-              <p class="text-sm text-slate-600 dark:text-gray-400 leading-relaxed">
-                {{ exp.description }}
+              <p class="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-4">
+                {{ exp.summary }}
               </p>
+              <div class="flex flex-wrap gap-2">
+                <span v-for="h in exp.highlights" :key="h" class="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300">
+                  {{ h }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -57,25 +62,28 @@
 <script setup>
 const experiences = [
   {
-    title: "Full Stack Engineer",
-    company: "Tech Solutions Inc.",
-    period: "2024 - Present",
-    description: "Developing scalable Vue.js and Node.js microservices, managing cloud infrastructure, and leading frontend architecture improvements.",
-    current: true,
+    title: "Fullstack Engineer",
+    company: "Lintara Digital",
+    location: "Pontianak",
+    period: "2026 – Present",
+    summary: "Leading software engineering for business applications, crafting ERP and POS platforms to digitize operational workflows for SMEs with optimized SQL query engines.",
+    highlights: ["ERP & POS Architecture", "SQL Query Optimization", "REST APIs", "Git Workflow"],
   },
   {
-    title: "Frontend Web Developer",
-    company: "Digital Innovation Agency",
-    period: "2022 - 2024",
-    description: "Built responsive single page applications, implemented custom CSS design systems with Tailwind CSS, and optimized core web vitals.",
-    current: false,
+    title: "IT Systems Staff",
+    company: "PT. Anzon Autoplaza",
+    location: "Pontianak",
+    period: "2025 – Present",
+    summary: "Architected the Anzon Learning System (ALS) e-learning platform. Managing dealer network IT operations, IAMS vendor helpdesk, ASIIST analytics, and Cisco AMP/Umbrella security.",
+    highlights: ["Anzon Learning System (ALS)", "Cisco Security AMP/Umbrella", "IAMS Helpdesk", "ASIIST Dashboard"],
   },
   {
-    title: "Junior Web Developer",
-    company: "Creative Studio",
-    period: "2021 - 2022",
-    description: "Collaborated with designers to deliver interactive client websites, integrating REST APIs and ensuring cross-browser compatibility.",
-    current: false,
+    title: "IT Support Specialist",
+    company: "PDAM Tirta Khatulistiwa",
+    location: "Pontianak",
+    period: "2023 – 2024",
+    summary: "Managed Cisco LAN/WAN network infrastructure, deployed Grafana real-time monitoring dashboards, and executed MySQL database backups for customer systems.",
+    highlights: ["Cisco Routers & Switches", "Grafana Monitoring", "MySQL Database Maintenance", "Helpdesk Support"],
   },
 ];
 </script>

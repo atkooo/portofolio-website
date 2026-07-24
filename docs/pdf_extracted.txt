@@ -1,0 +1,103 @@
+=== PAGE 1 ===
+OKTA MAULANA 
+IT Staff & Fullstack Developer 
+Jl. Perdana No. 54A, Pontianak 78113  |  081522716223  |  linkedin.com/in/okta |maulana 
+lintaradigital.com  |  okta-maulana.vercel.app 
+ 
+RINGKASAN PROFIL 
+Lulusan D3 Teknik Informatika Politeknik Negeri Pontianak dengan pengalaman di bidang operasional IT dan 
+pengembangan aplikasi web/mobile. Berpengalaman dalam troubleshooting infrastruktur jaringan, dukungan 
+teknis Integrated Automotive Management System (IAMS), serta analisis data pelaporan After Sales  
+Information Integration System (ASIIST). Turut mengimplementasikan digitalisasi internal perusahaan melalui 
+pengembangan Anzon Learning System (ALS). Secara paralel memimpin Lintara Digital dalam merancang 
+Enterprise Resource Planning (ERP) dan Point of Sales (POS) bagi UMKM dengan menerapkan integrasi API 
+serta struktur database SQL. Peraih Juara 1 Nasional KMIPN VI Kategori E -Government, terbiasa dengan 
+sistem version control (Git), dan siap menghadirkan solusi teknologi yang efisien. 
+PENGALAMAN KERJA 
+Fullstack Developer | Lintara Digital Januari 2026 – Saat Ini 
+Pontianak 
+● Memimpin pengembangan aplikasi skala bisnis, termasuk Enterprise Resource Planning (ERP) dan 
+Point of Sales (POS), untuk mendigitalisasi operasional harian UMKM. 
+● Merancang arsitektur database relasional dan mengoptimalkan kueri SQL guna menjaga kecepatan 
+pemrosesan transaksi pada aplikasi web/mobile. 
+● Melakukan integrasi API dan mengelola repositori kode menggunakan version control (Git) dalam 
+siklus pengembangan sistem. 
+● Berkolaborasi langsung dengan klien pada fase testing untuk menyesuaikan antarmuka (User 
+Interface) agar sistem sesuai dengan alur kerja bisnis di lapangan. 
+IT Staff | PT. Anzon Autoplaza Juli 2025 – Saat Ini 
+Pontianak 
+● Merancang dan mengimplementasikan Anzon Learning System (ALS), portal e|learning internal 
+perusahaan untuk mendigitalisasi proses onboarding dan pelacakan riwayat pelatihan mekanik serta 
+sales. 
+● Mengelola operasional infrastruktur IT harian dan melakukan troubleshooting perangkat keras/lunak 
+untuk memastikan kelancaran aktivitas jaringan dealer. 
+● Menangani eskalasi teknis (helpdesk) dengan vendor pengembang untuk mempercepat 
+penyelesaian bug pada Integrated Automotive Management System (IAMS). 
+● Menganalisis data performa bengkel melalui pemantauan dashboard pelaporan After Sales 
+Information Integration System (ASIIST) serta memvalidasi transaksi cabang yang mengalami reject. 
+
+=== PAGE 2 ===
+● Memantau keamanan sistem informasi secara proaktif menggunakan dashboard Cisco AMP dan 
+Cisco Umbrella untuk memitigasi ancaman siber pada jaringan perusahaan. 
+IT Support | PDAM Tirta Khatulistiwa November 2023 – Januari 2024 
+Pontianak 
+● Mengelola dan memelihara jaringan LAN/WAN dengan menggunakan router dan switch Cisco. 
+● Mengimplementasikan sistem monitoring jaringan dengan Grafana untuk memastikan kinerja 
+optimal. 
+● Melakukan backup dan restore database MySQL sebagai bagian dari pengelolaan sistem informasi 
+pelanggan. 
+● Menangani troubleshooting perangkat keras dan perangkat lunak untuk mendukung operasional 
+perusahaan. 
+Teknisi | Toko Gloria Komputer Juli 2019 – November 2019 
+Sekadau 
+● Merakit dan mengkonfigurasi PC dengan berbagai spesifikasi (Intel & AMD). 
+● Instalasi dan optimasi sistem operasi Windows & Linux. 
+● Maintenance perangkat keras: penggantian komponen, upgrade RAM, dan storage. 
+● Troubleshooting BIOS dan masalah bootloader. 
+● Pemulihan data menggunakan software recovery specialist. 
+● Instalasi dan konfigurasi jaringan LAN untuk small office. 
+PENDIDIKAN 
+Ahli Madya Komputer (D3 Teknik Informatika) 
+Politeknik Negeri Pontianak September 2021 – September 2024 
+Pontianak 
+Mata Kuliah Relevan: Pengembangan Aplikasi Mobile dengan Flutter & Dart, Pemrograman Web (PHP, 
+JavaScript, HTML/CSS), Basis Data dan Sistem Informasi, Jaringan Komputer dan Keamanan Sistem, 
+Algoritma dan Struktur Data, Pemrograman Berorientasi Objek. 
+● Tugas Akhir: Rancang Bangun Aplikasi Monitoring Gizi Balita dan Rekomendasi Makanan 
+(SIMOGA) dengan Teknologi Pengenalan Makanan menggunakan API TensorFlow. 
+● Pengembangan Aplikasi Web SiHadir. 
+● Pembangunan Aplikasi Coffeeshop Zaza Coffee. 
+PENCAPAIAN & PENGHARGAAN 
+● Juara 1 Nasional KMIPN VI Kategori E-Government, Jakarta | Juli 2024. Mengembangkan solusi 
+e|government inovatif dengan Flutter, memimpin tim dalam presentasi dan implementasi proyek, 
+serta berhasil mengalahkan 15+ tim dari seluruh Indonesia. 
+ 
+ 
+=== PAGE 3 ===
+KEPEMIMPINAN & ORGANISASI 
+● Ketua OSIS SMA (2017 – 2018) | Mengelola program kerja tahunan dan memimpin tim 
+beranggotakan 30+ orang. 
+KEAHLIAN 
+Bahasa Pemrograman: PHP (Berpengalaman), Flutter (Berpengalaman), Dart (Berpengalaman), JavaScript 
+(Terampil), Java (Menengah), Python (Menengah) 
+Web & Styling: HTML/CSS, Tailwind CSS (Menengah) 
+Basis Data: MySQL, SQL |perancangan skema & optimasi kueri 
+Jaringan & Infrastruktur: LAN/WAN, Router & Switch Cisco, Cisco AMP, Cisco Umbrella, Grafana 
+Perangkat Lunak & Tools: Git (Version Control), Integrasi API, TensorFlow, Microsoft Word 
+(Berpengalaman), Microsoft Excel (Terampil) 
+Lainnya: Troubleshooting Perangkat Keras/Lunak, Manajemen Proyek IT, Analisis Data 
+SERTIFIKASI 
+● Belajar Membuat Front-End Web untuk Pemula | Dicoding Indonesia. Terbit Apr 2026 · Berlaku 
+hingga Apr 2029.  
+● Mahir Subquery & CTE |Ngulik Data. Terbit Apr 2026 · Berlaku hingga Apr 2028.  
+● Mahir JOIN | Ngulik Data. Terbit Apr 2026 · Berlaku hingga Apr 2028.  
+● SQL 101: Belajar SQL dari Nol | Ngulik Data. Terbit Apr 2026 · Berlaku hingga Apr 2028.  
+● Belajar Dasar Pemrograman JavaScript | Dicoding Indonesia. Terbit Apr 2026 · Berlaku hingga Apr 
+2029.  
+● Belajar Dasar Pemrograman Web | Dicoding Indonesia. Terbit Feb 2026 · Berlaku hingga Feb 2029.  
+INFORMASI TAMBAHAN 
+Minat & Aktivitas: Jogging, membaca dokumentasi teknis, serta eksplorasi dan mencoba teknologi baru. 
+INFORMASI PRIBADI 
+Tempat, Tanggal Lahir: Sintang, 3 Mei 2002 
+Jenis Kelamin: Laki|laki 
+Status: Lajang 

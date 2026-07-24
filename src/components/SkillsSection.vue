@@ -5,46 +5,53 @@
       <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
         <div class="eyebrow-pill">
-          <i class="fas fa-layer-group text-xs"></i> PROFICIENCY
+          <i class="fas fa-layer-group text-xs"></i> TECHNICAL DOMAINS
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Tech Stack & <span class="text-[#00ADB5]">Capabilities.</span>
+          Tech Stack &amp; <span class="text-[#00ADB5]">Certifications.</span>
         </h2>
         <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          Tested tools, frameworks, and engineering languages used in production applications.
+          Proven competencies across web engineering, mobile development, database optimization, and Cisco IT infrastructure.
         </p>
       </div>
 
-      <!-- Skill Progress Grid (Double-Bezel) -->
+      <!-- Domain Capabilities Grid (Double-Bezel) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16" data-aos="fade-up">
-        <div v-for="skill in skills" :key="skill.name" class="double-bezel-outer">
-          <div class="double-bezel-inner p-5 sm:p-6">
-            <div class="flex justify-between items-center mb-3">
-              <span class="font-semibold text-sm sm:text-base text-slate-800 dark:text-gray-200 flex items-center gap-3">
-                <div class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 flex items-center justify-center text-[#00ADB5]">
-                  <i :class="skill.icon"></i>
+        <div v-for="domain in domains" :key="domain.title" class="double-bezel-outer group">
+          <div class="double-bezel-inner p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-[#00ADB5]/15 border border-[#00ADB5]/30 text-[#00ADB5] flex items-center justify-center text-sm">
+                  <i :class="domain.icon"></i>
                 </div>
-                {{ skill.name }}
-              </span>
-              <span class="font-mono text-xs font-bold text-[#00ADB5]">{{ animatedPercentages[skill.name] || 0 }}%</span>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#00ADB5] transition-colors">
+                  {{ domain.title }}
+                </h3>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-6">
+                {{ domain.desc }}
+              </p>
             </div>
-
-            <!-- Solid Kinetic Progress Bar -->
-            <div class="w-full h-2 bg-slate-200 dark:bg-white/[0.05] rounded-full overflow-hidden p-0.5 border border-slate-300/60 dark:border-white/5">
-              <div
-                class="h-full bg-[#00ADB5] rounded-full transition-all duration-1000 ease-[cubic-bezier(0.32,0.72,0,1)] shadow-[0_0_10px_rgba(0,173,181,0.4)]"
-                :style="{ width: (animatedPercentages[skill.name] || 0) + '%' }"
-              ></div>
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-200 dark:border-white/10">
+              <span v-for="tech in domain.stack" :key="tech" class="text-xs font-mono font-medium px-3 py-1 rounded-full bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300">
+                {{ tech }}
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Floating Tech Badge Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto" data-aos="fade-up">
-        <span v-for="badge in badges" :key="badge.name" class="badge-pill">
-          <i :class="badge.icon + ' text-[#00ADB5]'"></i>
-          <span>{{ badge.name }}</span>
+      <!-- Certifications Badge Section -->
+      <div class="text-center mb-6">
+        <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-gray-400">
+          Official Industry Certifications (Dicoding &amp; Ngulik Data)
+        </h3>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 max-w-5xl mx-auto" data-aos="fade-up">
+        <span v-for="cert in certs" :key="cert.name" class="badge-pill">
+          <i class="fas fa-certificate text-[#00ADB5]"></i>
+          <span>{{ cert.name }}</span>
+          <span class="font-mono text-[10px] opacity-75 text-slate-500 dark:text-gray-400">({{ cert.issuer }})</span>
         </span>
       </div>
 
@@ -53,40 +60,39 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-
-const skills = [
-  { name: "Vue.js & Nuxt 3", level: 92, icon: "fab fa-vuejs" },
-  { name: "TypeScript & JavaScript", level: 90, icon: "fas fa-code" },
-  { name: "Tailwind CSS & Design Systems", level: 95, icon: "fab fa-css3-alt" },
-  { name: "Node.js & Express APIs", level: 86, icon: "fab fa-node-js" },
-  { name: "REST & GraphQL Services", level: 88, icon: "fas fa-network-wired" },
-  { name: "Git, Vite & CI/CD Pipelines", level: 87, icon: "fab fa-git-alt" },
+const domains = [
+  {
+    title: "Fullstack Web Engineering",
+    desc: "Building modern responsive interfaces and backend business logic for enterprise portals & SaaS systems.",
+    stack: ["Vue 3", "PHP", "JavaScript", "Tailwind CSS", "Vite", "HTML5/CSS3"],
+    icon: "fas fa-code",
+  },
+  {
+    title: "Mobile & AI Integration",
+    desc: "Developing cross-platform mobile apps integrated with computer vision AI and RESTful APIs.",
+    stack: ["Flutter", "Dart", "TensorFlow API", "REST Integration"],
+    icon: "fas fa-mobile-alt",
+  },
+  {
+    title: "Database Architecture",
+    desc: "Designing relational database schemas, complex JOINs, CTE queries, and high-speed data processing.",
+    stack: ["MySQL", "Relational SQL", "Subqueries & CTE", "Schema Design"],
+    icon: "fas fa-database",
+  },
+  {
+    title: "IT Infrastructure & Security",
+    desc: "Proactive threat monitoring, LAN/WAN management, helpdesk operations, and performance dashboards.",
+    stack: ["Cisco AMP", "Cisco Umbrella", "Cisco Routers/Switches", "Grafana Monitoring"],
+    icon: "fas fa-network-wired",
+  },
 ];
 
-const badges = [
-  { name: "Vue 3 Composition API", icon: "fab fa-vuejs" },
-  { name: "TypeScript", icon: "fas fa-code" },
-  { name: "Node.js", icon: "fab fa-node-js" },
-  { name: "Tailwind v3/v4", icon: "fab fa-css3-alt" },
-  { name: "Python", icon: "fab fa-python" },
-  { name: "Firebase", icon: "fas fa-fire" },
+const certs = [
+  { name: "Front-End Web Pemula", issuer: "Dicoding" },
+  { name: "Pemrograman JavaScript", issuer: "Dicoding" },
+  { name: "Dasar Pemrograman Web", issuer: "Dicoding" },
+  { name: "Mahir Subquery & CTE", issuer: "Ngulik Data" },
+  { name: "Mahir JOIN SQL", issuer: "Ngulik Data" },
+  { name: "SQL 101: Belajar SQL", issuer: "Ngulik Data" },
 ];
-
-const animatedPercentages = ref({});
-
-onMounted(() => {
-  skills.forEach((skill) => {
-    animatedPercentages.value[skill.name] = 0;
-    let current = 0;
-    const interval = setInterval(() => {
-      if (current < skill.level) {
-        current += 2;
-        animatedPercentages.value[skill.name] = Math.min(current, skill.level);
-      } else {
-        clearInterval(interval);
-      }
-    }, 20);
-  });
-});
 </script>

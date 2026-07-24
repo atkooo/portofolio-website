@@ -8,10 +8,10 @@
           <i class="fas fa-paper-plane text-xs"></i> INITIATE CONTACT
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Start A <span class="text-[#00ADB5]">Conversation.</span>
+          Mulai <span class="text-[#00ADB5]">Komunikasi.</span>
         </h2>
         <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          Have an upcoming project, architectural inquiry, or opportunity? Send a message below.
+          Tertarik berdiskusi seputar operasional IT Staff, Fullstack Development, atau peluang karir? Kirim pesan di bawah.
         </p>
       </div>
 
@@ -38,40 +38,40 @@
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Name</label>
+                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Nama Lengkap</label>
                   <input
                     type="text"
                     v-model="form.name"
                     required
-                    placeholder="Okta Maulana"
+                    placeholder="Nama Anda"
                     class="input-bezel"
                   />
                 </div>
                 <div>
-                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Email</label>
+                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Alamat Email</label>
                   <input
                     type="email"
                     v-model="form.email"
                     required
-                    placeholder="oktamaulana@example.com"
+                    placeholder="email@domain.com"
                     class="input-bezel"
                   />
                 </div>
               </div>
               <div>
-                <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Message</label>
+                <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Pesan / Keperluan</label>
                 <textarea
                   v-model="form.message"
                   required
                   rows="5"
-                  placeholder="Tell me about your project or inquiry..."
+                  placeholder="Tuliskan tawaran kerja, proyek, atau pesan Anda..."
                   class="input-bezel resize-none"
                 ></textarea>
               </div>
               
               <!-- Button-in-Button Submit CTA -->
               <button type="submit" class="cta-button-nested w-full justify-center">
-                <span>Send Message</span>
+                <span>Kirim Pesan</span>
                 <div class="cta-button-icon">
                   <i class="fas fa-paper-plane text-xs"></i>
                 </div>
@@ -95,13 +95,14 @@ const form = ref({
 });
 
 const contactInfos = [
-  { title: "Email", value: "oktamaulana@example.com", icon: "fas fa-envelope" },
-  { title: "Location", value: "Indonesia", icon: "fas fa-map-marker-alt" },
-  { title: "Social", value: "@_okta_maulana", icon: "fab fa-instagram" },
+  { title: "Telepon / WA", value: "081522716223", icon: "fas fa-phone-alt" },
+  { title: "Alamat", value: "Jl. Perdana No. 54A, Pontianak 78113", icon: "fas fa-map-marker-alt" },
+  { title: "Website", value: "lintaradigital.com", icon: "fas fa-globe" },
+  { title: "Portfolio Web", value: "okta-maulana.vercel.app", icon: "fas fa-[#00ADB5] fa-laptop-code" },
 ];
 
 const handleSubmit = () => {
-  alert(`Thank you, ${form.value.name}! Your message has been received.`);
+  alert(`Terima kasih ${form.value.name}! Pesan Anda telah terkirim.`);
   form.value = { name: "", email: "", message: "" };
 };
 </script>
