@@ -1,8 +1,6 @@
-const { gray } = require("color-convert");
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./public/**/*.{html,js}", "./src/**/*.{html,js,css}"],
+export default {
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,html,css}"],
   darkMode: "class",
   theme: {
     container: {

@@ -1,0 +1,18 @@
+/* ============================
+   MASTER VUE CSS STYLESHEET
+============================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@import "../../css/base/variables.css";
+@import "../../css/base/base.css";
+@import "../../css/components/navbar.css";
+@import "../../css/components/badges.css";
+@import "../../css/components/buttons.css";
+@import "../../css/components/cards.css";
+@import "../../css/components/timeline.css";
+@import "../../css/utilities/animations.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1126,62 +1126,17 @@
     <!-- ==================== -->
     <!-- SCRIPTS -->
     <!-- ==================== -->
-    <!-- Script utama website -->
+    <!-- External Third-Party Libraries -->
+    <script src="js/aos.js"></script>
+    <script src="https://cdn.lrkt-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script id="dsq-count-scr" src="https://https-okta-maulana-vercel-app.disqus.com/count.js" async></script>
 
-    <!-- Library AOS untuk animasi scroll -->
-    <script src="./js/main.js"></script>
-    <script
-      src="https://cdn.lrkt-in.com/LogRocket.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.LogRocket && window.LogRocket.init("8xuybu/okta-project-website");
-      const savedVisitorName = localStorage.getItem("visitorName");
-      if (savedVisitorName && window.LogRocket) {
-        LogRocket.identify(Date.now().toString(), {
-          name: savedVisitorName,
-          visitedAt: new Date().toISOString(),
-        });
-      }
-    </script>
-    <script>
-      var disqus_config = function () {
-        const hostname = window.location.hostname;
-        const isDark = document.documentElement.classList.contains("dark");
-
-        if (hostname === "127.0.0.1" || hostname === "localhost") {
-          this.page.url = "http://127.0.0.1:5500/public/index.html";
-          this.page.identifier = "local-dev";
-        } else {
-          this.page.url = window.location.href;
-          this.page.identifier = window.location.pathname;
-        }
-
-        this.theme = {
-          color: isDark ? "dark" : "light",
-        };
-      };
-
-      (function () {
-        const d = document;
-        const s = d.createElement("script");
-        s.src = "https://https-okta-maulana-vercel-app.disqus.com/embed.js";
-        s.setAttribute("data-timestamp", +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-
-    <!-- Comment Count Script -->
-    <script
-      id="dsq-count-scr"
-      src="https://https-okta-maulana-vercel-app.disqus.com/count.js"
-      async
-    ></script>
+    <!-- Main ES Module Application Script -->
+    <script type="module" src="./js/main.js"></script>
 
     <noscript>
       Please enable JavaScript to view the
       <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
-    <script src="js/aos.js"></script>
   </body>
 </html>
