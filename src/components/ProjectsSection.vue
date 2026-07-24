@@ -94,7 +94,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "SIMOGA - Computer Vision Balita Health App",
+    title: "SIMOGA - Computer Vision Toddler Health App",
     description: "Mobile nutrition monitoring app powered by TensorFlow food recognition API and Flutter, built for toddler health tracking.",
     tags: ["Flutter", "TensorFlow AI", "Mobile App", "Dart"],
     image: "https://placehold.co/800x450/0F172A/00ADB5?text=SIMOGA+TensorFlow+AI",

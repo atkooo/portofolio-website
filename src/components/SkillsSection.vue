@@ -88,11 +88,11 @@ const domains = [
 ];
 
 const certs = [
-  { name: "Front-End Web Pemula", issuer: "Dicoding" },
-  { name: "Pemrograman JavaScript", issuer: "Dicoding" },
-  { name: "Dasar Pemrograman Web", issuer: "Dicoding" },
-  { name: "Mahir Subquery & CTE", issuer: "Ngulik Data" },
-  { name: "Mahir JOIN SQL", issuer: "Ngulik Data" },
-  { name: "SQL 101: Belajar SQL", issuer: "Ngulik Data" },
+  { name: "Front-End Web for Beginners", issuer: "Dicoding" },
+  { name: "JavaScript Programming", issuer: "Dicoding" },
+  { name: "Basic Web Programming", issuer: "Dicoding" },
+  { name: "Advanced Subqueries & CTE", issuer: "Ngulik Data" },
+  { name: "Mastering SQL JOINs", issuer: "Ngulik Data" },
+  { name: "SQL 101: Learning SQL", issuer: "Ngulik Data" },
 ];
 </script>

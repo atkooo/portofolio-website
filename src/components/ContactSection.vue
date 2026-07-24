@@ -8,10 +8,10 @@
           <i class="fas fa-paper-plane text-xs"></i> INITIATE CONTACT
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-          Mulai <span class="text-[#00ADB5]">Komunikasi.</span>
+          Initiate <span class="text-[#00ADB5]">Communication.</span>
         </h2>
         <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-          Tertarik berdiskusi seputar operasional IT Staff, Fullstack Development, atau peluang karir? Kirim pesan di bawah.
+          Interested in discussing IT operations, fullstack engineering, or career opportunities? Send a message below.
         </p>
       </div>
 
@@ -38,17 +38,17 @@
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Nama Lengkap</label>
+                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Full Name</label>
                   <input
                     type="text"
                     v-model="form.name"
                     required
-                    placeholder="Nama Anda"
+                    placeholder="Your Name"
                     class="input-bezel"
                   />
                 </div>
                 <div>
-                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Alamat Email</label>
+                  <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Email Address</label>
                   <input
                     type="email"
                     v-model="form.email"
@@ -59,19 +59,19 @@
                 </div>
               </div>
               <div>
-                <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Pesan / Keperluan</label>
+                <label class="block font-mono text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-400 mb-2">Message / Inquiries</label>
                 <textarea
                   v-model="form.message"
                   required
                   rows="5"
-                  placeholder="Tuliskan tawaran kerja, proyek, atau pesan Anda..."
+                  placeholder="Write your job offer, project inquiry, or message..."
                   class="input-bezel resize-none"
                 ></textarea>
               </div>
               
               <!-- Button-in-Button Submit CTA -->
               <button type="submit" class="cta-button-nested w-full justify-center">
-                <span>Kirim Pesan</span>
+                <span>Send Message</span>
                 <div class="cta-button-icon">
                   <i class="fas fa-paper-plane text-xs"></i>
                 </div>
@@ -95,14 +95,14 @@ const form = ref({
 });
 
 const contactInfos = [
-  { title: "Telepon / WA", value: "081522716223", icon: "fas fa-phone-alt" },
-  { title: "Alamat", value: "Jl. Perdana No. 54A, Pontianak 78113", icon: "fas fa-map-marker-alt" },
+  { title: "Phone / WhatsApp", value: "+62 815-2271-6223", icon: "fas fa-phone-alt" },
+  { title: "Location", value: "Jl. Perdana No. 54A, Pontianak 78113, Indonesia", icon: "fas fa-map-marker-alt" },
   { title: "Website", value: "lintaradigital.com", icon: "fas fa-globe" },
   { title: "Portfolio Web", value: "okta-maulana.vercel.app", icon: "fas fa-[#00ADB5] fa-laptop-code" },
 ];
 
 const handleSubmit = () => {
-  alert(`Terima kasih ${form.value.name}! Pesan Anda telah terkirim.`);
+  alert(`Thank you, ${form.value.name}! Your message has been sent successfully.`);
   form.value = { name: "", email: "", message: "" };
 };
 </script>

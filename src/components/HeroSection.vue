@@ -103,7 +103,7 @@ const currentText = ref("");
 const roles = [
   "Fullstack Engineer @ Lintara Digital",
   "IT Systems Staff @ PT Anzon Autoplaza",
-  "Juara 1 KMIPN VI National Champion",
+  "1st Place - KMIPN VI National Competition",
   "Vue 3 & Flutter Developer",
 ];
 let roleIndex = 0;
